@@ -1,7 +1,7 @@
 dataset:
   dataset: "NuscDataset"
   version: "trainval"
-  base_dir: storage/nuscenes
+  base_dir: storage/nuScenes
   data_output_dir: storage/nuscenes_416_256/
   replace_name: False
 
