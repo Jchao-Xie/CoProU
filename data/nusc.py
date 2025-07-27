@@ -13,7 +13,7 @@ from pyquaternion import Quaternion
 from nuscenes.nuscenes import NuScenes
 from nuscenes.utils.geometry_utils import view_points, transform_matrix
 
-from datasets.base import BaseDataset
+from data.base import BaseDataset
 
 import argparse
 import yaml
