@@ -2,7 +2,7 @@
 
 # CoProU-VO: Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry
 
-### **[Jingchao Xie\*](https://www.linkedin.com/in/jingchao-xie-16b724297)\***<sup>1,3</sup>, **[Oussema Dhaouadi\*](https://cvg.cit.tum.de/members/dhou)\***<sup>1,2,3</sup>†, **[Weirong Chen](https://wrchen530.github.io/)**<sup>1,3</sup>, **[Johannes Meier](https://cvg.cit.tum.de/members/mejo)**<sup>1,2,3</sup>, **[Jacques Kaiser](https://jacqueskaiser.com/)**<sup>2</sup>, **[Daniel Cremers](https://cvg.cit.tum.de/members/cremers)**<sup>1,3</sup>
+### **[Jingchao Xie](https://www.linkedin.com/in/jingchao-xie-16b724297)\***<sup>1,3</sup>, **[Oussema Dhaouadi](https://cvg.cit.tum.de/members/dhou)\***<sup>1,2,3</sup>†, **[Weirong Chen](https://wrchen530.github.io/)**<sup>1,3</sup>, **[Johannes Meier](https://cvg.cit.tum.de/members/mejo)**<sup>1,2,3</sup>, **[Jacques Kaiser](https://jacqueskaiser.com/)**<sup>2</sup>, **[Daniel Cremers](https://cvg.cit.tum.de/members/cremers)**<sup>1,3</sup>
 
 <sup>1</sup> [Computer Vision Group at Technical University of Munich (TUM)](https://cvg.cit.tum.de/)  
 <sup>2</sup> [DeepScenario](https://www.deepscenario.com)  
