@@ -1,0 +1,15 @@
+imageio
+matplotlib
+argparse
+tensorboardX
+blessings
+progressbar2
+path
+addict
+nuscenes-devkit
+numpy==1.24.4
+pebble
+scikit-image
+PyYAML
+lightning
+importlib-metadata
