@@ -247,6 +247,9 @@ We appreciate the contributions of the following projects, which have greatly su
  
  * [RoGS](https://github.com/fzhiheng/RoGS) - Preprocessing code for the nuScenes dataset.
 
+ 
+ * [DepthAnything-v2](https://github.com/DepthAnything/Depth-Anything-V2) and [DINOv2](https://github.com/facebookresearch/dinov2) – Providing Vision Transformer backbone features.
+
  ## License
 
 This project is licensed under the GNU General Public License v3.0.  
