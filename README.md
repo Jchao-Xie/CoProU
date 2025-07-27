@@ -221,4 +221,9 @@ We appreciate the contributions of the following projects, which have greatly su
  * [Kitti-Odom-Eval-Python](https://github.com/Huangying-Zhan/kitti-odom-eval) - Python implementation for KITTI odometry evaluation.
  
  * [RoGS](https://github.com/fzhiheng/RoGS) - Preprocessing code for the nuScenes dataset.
+
+ ## License
+
+This project is licensed under the GNU General Public License v3.0.  
+See the [LICENSE](./LICENSE) file for more details.
  
