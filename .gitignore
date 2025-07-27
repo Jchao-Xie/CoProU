@@ -1,0 +1,11 @@
+*.pdf
+*.png
+*.txt
+*.pyc
+*.sbatch
+*.svg
+*.jpg
+
+depth_anything_v2/__pycache__/dpt.cpython-38.pyc
+datasets/test_waymo
+*.mp4

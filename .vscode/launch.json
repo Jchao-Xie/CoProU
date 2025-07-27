@@ -1,0 +1,280 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "[pl]training_with_val_nusc",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/lightning_train.py",
+            "console": "integratedTerminal",
+            "args": "/dss/dsshome1/0B/ge53dag2/CoProU/storage/nuscenes_416_256/  --dataset nuscenes --encoder vits --dan --epochs 200000 -b4 -s0.1 -c0.5  --skip-frames 2 --sequence-length 3 --with-ssim 1 --with-mask 0 --with-auto-mask 1 --with-pretrain 1 --name debug --lr 1e-4"
+        },
+        {
+            "name": "[pl]training_with_val_kitti",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/lightning_train.py",
+            "console": "integratedTerminal",
+            "args": "/dss/dsshome1/0B/ge53dag2/CoProU/storage/kitti_vo_256  --dataset kitti --encoder vits --dan --epochs 200000 -b8 -s0.1 -c0.6 --sequence-length 3 --with-ssim 1 --with-mask 0 --with-auto-mask 1 --with-pretrain 1 --log-output --name debug --lr 1e-4 --resume-path checkpoints/GCPR_2025_kitti/07-24-23:58/checkpoint_epoch=41.ckpt"
+        },
+        {
+            "name": "data/prepare_train_data.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/data/prepare_train_data.py",
+            "console": "integratedTerminal",
+            "args": "/home/stud/xiji/storage/group/deepscenario/KITTI/odomotry/dataset  --dataset-format 'kitti_odom' --dump-root /home/stud/xiji/storage/slurm/kitti_vo_256/ --width 832 --height 256 --num-threads 4"
+        },
+        {
+            "name": "data/nusc.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/data/nusc.py",
+            "console": "integratedTerminal",
+            "args": "--config data/nuscenes_config/local_nusc.yaml"
+        },
+        {
+            "name": "[GCPR]intermediate visualization_nusc",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                // "--pretrained-dispnet", "/home/stud/xiji/SC-Depth_Anything/checkpoints/combined_unty_nusc_6Hz/05-24-12:57/dispnet_checkpoint_16.pth.tar",
+                // "--pretrained-posenet", "/home/stud/xiji/SC-Depth_Anything/checkpoints/combined_unty_nusc_6Hz/05-24-12:57/exp_pose_checkpoint_16.pth.tar",
+                "--pretrained-model", "checkpoints/GCPR_2025_nusc/07-24-13:12/checkpoint_epoch=25.ckpt",
+                "--img-height", "256",
+                "--img-width", "416",
+                "--dataset", "nuscenes",
+                // "--dataset-dir", "/home/stud/xiji/storage/slurm/nuscenes_416_256/",
+                // "--output-dir", "/home/stud/xiji/SC-Depth_Anything/comparation/no_important/",
+                // "--tgt-img", "/home/stud/xiji/storage/slurm/nuscenes_416_256/scene-0184_0/n015-2018-07-27-11-36-48+0800__CAM_FRONT__1532662952762460.jpg",
+                // "--ref-img", "/home/stud/xiji/storage/slurm/nuscenes_416_256/scene-0184_0/n015-2018-07-27-11-36-48+0800__CAM_FRONT__1532662952612460.jpg",
+                "--tgt-img", "storage/nuscenes_416_256/scene-0184_0/n015-2018-07-27-11-36-48+0800__CAM_FRONT__1532662952762460.jpg",
+                "--ref-img", "storage/nuscenes_416_256/scene-0184_0/n015-2018-07-27-11-36-48+0800__CAM_FRONT__1532662952612460.jpg",
+            ]
+        },
+        {
+            "name": "[GCPR]test_nuscenes_vo",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_vo_nusc.py",
+            "console": "integratedTerminal",
+            // "args": "--pretrained-posenet /home/stud/xiji/SC-Depth_Anything/checkpoints/resnet50_pose_256/01-28-12:00/exp_pose_model_best.pth.tar --img-height 256 --img-width 832 --dataset-dir /home/stud/xiji/storage/group/dataset_mirrors/01_incoming/kitti_odom_color/sequences/ --sequence 09 --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/best_without_unty_seq09/"
+            "args": "--test --interval 1 --pretrained-model checkpoints/GCPR_2025_nusc/07-24-13:12/checkpoint_epoch=22.ckpt --img-height 256 --img-width 416 --dataset-dir /dss/dsshome1/0B/ge53dag2/CoProU/storage/nuscenes_416_256/ --output-dir /dss/dsshome1/0B/ge53dag2/CoProU/comparation/"
+        },
+        {
+            "name": "[GCPR]nusc_eval/eval_odom.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/nusc_eval/eval_odom.py",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "console": "integratedTerminal",
+            "args": "--interval 1  --test --result comparation/checkpoints/GCPR_2025_nusc/07-24-13:12/checkpoint_epoch=22/ --align '7dof' " 
+        },
+        {
+            "name": "[GCPR]kitti_eval/eval_odom.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/kitti_eval/eval_odom.py",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "console": "integratedTerminal",
+            "args": "--result comparation/checkpoints/GCPR_2025_kitti/07-25-22:08/checkpoint_epoch=59/ --align '7dof' " 
+        },
+        {
+            "name": "[GCPR]test_kitti_vo",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_vo.py",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "console": "integratedTerminal",
+            // "args": "--pretrained-posenet /home/stud/xiji/SC-Depth_Anything/checkpoints/resnet50_pose_256/01-28-12:00/exp_pose_model_best.pth.tar --img-height 256 --img-width 832 --dataset-dir /home/stud/xiji/storage/group/dataset_mirrors/01_incoming/kitti_odom_color/sequences/ --sequence 09 --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/best_without_unty_seq09/"
+            "args": "--pretrained-model checkpoints/GCPR_2025_kitti/07-25-22:08/checkpoint_epoch=59.ckpt --img-height 256 --img-width 832 --dataset-dir /home/stud/xiji/storage/group/dataset_mirrors/01_incoming/kitti_odom_color/sequences/ --sequence 10 --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/checkpoints/GCPR_2025_kitti/07-25-22:08/checkpoint_epoch=59/"
+        },
+        {
+            "name": "training_with_val_nusc",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "/home/stud/xiji/storage/slurm/nuscenes_416_256/ --with-ph  --dataset nuscenes --encoder vits --dan --resnet-layers 50 --num-scales 1  --epochs 200000 -b2 -s0.1 -c0.5 --epoch-size 4 --skip-frames 2 --sequence-length 3 --with-ssim 1 --with-mask 1 --with-auto-mask 1 --with-pretrain 1 --log-output --name debug --lr 1e-4 "
+        },
+        {
+            "name": "overfitting_nusc",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "/home/stud/xiji/storage/slurm/overfitting_nusc/train/ --dataset nuscenes --no-aug --encoder vits  --dan --resnet-layers 50 --num-scales 1  --epochs 200000 -b8 -s0.1 -c0.5 --epoch-size 0 --sequence-length 3 --with-ssim 1 --with-mask 0 --with-auto-mask 1 --with-pretrain 1 --log-output --name debug --lr 5e-4"
+        },
+        {
+            "name": "datasets/nuscenes.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "--config datasets/nuscenes_config/local_nusc.yaml --start 0 --end 200"
+        },
+        {
+            "name": "datasets/waymo_preprocessing.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "--data_dir /home/stud/xiji/storage/group/deepscenario/waymo/waymo_raw_data/training --out_root /home/stud/xiji/SC-Depth_Anything/datasets/test_waymo"
+        },
+        {
+            "name": "DA_run.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "--encoder vits --img-path /home/stud/xiji/storage/slurm/kitti_vo_256/00_2/000007.jpg --outdir /home/stud/xiji/SC-Depth_Anything/depth_vis"
+        },
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "/home/stud/xiji/storage/slurm/kitti_vo_256 --resnet-layers 50 --num-scales 1  --epochs 200000 -b4 -s0.2 -c0.9 --epoch-size 1000 --sequence-length 3 --with-ssim 1 --with-mask 1 --with-auto-mask 1 --with-pretrain 1 --log-output --name debug --lr 0.1e-4 "
+        },
+        {
+            "name": "overfitting",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "/home/stud/xiji/storage/slurm/kitti_vo_256 --no-aug --encoder vits --debug --dan --resnet-layers 50 --num-scales 1  --epochs 200000 -b4 -s0.1 -c0.5 --epoch-size 0 --sequence-length 3 --with-ssim 1 --with-mask 0 --with-auto-mask 1 --with-pretrain 1 --log-output --name debug --lr 5e-4"
+        },
+        {
+            "name": "training_with_val",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "/home/stud/xiji/storage/slurm/kitti_vo_256  --encoder vits --dan --resnet-layers 50 --num-scales 1  --epochs 200000 -b2 -s0.1 -c0.5 --epoch-size 4 --sequence-length 3 --with-ssim 1 --with-mask 1 --with-auto-mask 1 --with-pretrain 1 --log-output --name debug --lr 1e-4 "
+        },
+        {
+            "name": "overfitting——with_pretrained",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "/home/stud/xiji/storage/slurm/kitti_vo_256  --no-aug --encoder vits --debug --dan --resnet-layers 50 --num-scales 1  --epochs 200000 -b1 -s0.1 -c0.5 --epoch-size 10000 --sequence-length 3 --with-ssim 1 --with-mask 0 --with-auto-mask 1 --with-pretrain 1 --log-output --name debug --lr 0.001e-4 --pretrained-disp /home/stud/xiji/SC-Depth_Anything/checkpoints/wo_dym_mask/04-01-12:26/dispnet_checkpoint_8.pth.tar --pretrained-pose /home/stud/xiji/SC-Depth_Anything/checkpoints/wo_dym_mask/04-01-12:26/exp_pose_checkpoint_8.pth.tar"
+        },
+        {
+            "name": "train.py_with_pretrained",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "/home/stud/xiji/storage/slurm/kitti_vo_256 --resnet-layers 50 --num-scales 1  --epochs 200000 -b4 -s0.1 -c0.5 --epoch-size 1000 --sequence-length 3 --with-ssim 1 --with-mask 1 --with-auto-mask 1 --with-pretrain 1 --log-output --name debug --lr 50e-5 --pretrained-disp /home/stud/xiji/SC-Depth_Anything/checkpoints/overfitting/02-25-00:40/dispnet_checkpoint.pth.tar --pretrained-pose /home/stud/xiji/SC-Depth_Anything/checkpoints/overfitting/02-25-00:40/exp_pose_checkpoint.pth.tar"
+        },
+        {
+            "name": "kitti_eval/eval_odom.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            // "cwd": "",
+            "console": "integratedTerminal",
+            "args": "--result=/home/stud/xiji/SC-Depth_Anything/comparation/checkpoints/wo_dym_mask——comb_unty_dinov2/04-21-23:33/e13/ --align='7dof'"
+        },
+        {
+            "name": "nusc_eval/eval_odom.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            // "cwd": "",
+            "console": "integratedTerminal",
+            "args": "--interval 2  --result /home/stud/xiji/SC-Depth_Anything/comparation/checkpoints/single_unty_nusc_6Hz/06-03-12:58/exp_pose_checkpoint_7/ --align '7dof' " 
+        },
+        {
+            "name": "test_kitti_vo",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            // "args": "--pretrained-posenet /home/stud/xiji/SC-Depth_Anything/checkpoints/resnet50_pose_256/01-28-12:00/exp_pose_model_best.pth.tar --img-height 256 --img-width 832 --dataset-dir /home/stud/xiji/storage/group/dataset_mirrors/01_incoming/kitti_odom_color/sequences/ --sequence 09 --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/best_without_unty_seq09/"
+            "args": "--pretrained-posenet /home/stud/xiji/SC-Depth_Anything/checkpoints/wo_dym_mask——comb_unty_dinov2/04-21-23:33/exp_pose_checkpoint_13.pth.tar --img-height 256 --img-width 832 --dataset-dir /home/stud/xiji/storage/group/dataset_mirrors/01_incoming/kitti_odom_color/sequences/ --sequence 01 --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/checkpoints/wo_dym_mask——comb_unty_dinov2/04-21-23:33/e13/"
+        },
+        {
+            "name": "test_nuscenes_vo",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            // "args": "--pretrained-posenet /home/stud/xiji/SC-Depth_Anything/checkpoints/resnet50_pose_256/01-28-12:00/exp_pose_model_best.pth.tar --img-height 256 --img-width 832 --dataset-dir /home/stud/xiji/storage/group/dataset_mirrors/01_incoming/kitti_odom_color/sequences/ --sequence 09 --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/best_without_unty_seq09/"
+            "args": "--interval 2 --pretrained-posenet /home/stud/xiji/SC-Depth_Anything/checkpoints/single_unty_nusc_6Hz/06-03-12:58/exp_pose_checkpoint_7.pth.tar  --img-height 256 --img-width 416 --dataset-dir /home/stud/xiji/storage/slurm/nuscenes_416_256/ --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/"
+        },
+        {
+            "name": "vo_visualization_nusc",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            // "args": "--pretrained-posenet /home/stud/xiji/SC-Depth_Anything/checkpoints/resnet50_pose_256/01-28-12:00/exp_pose_model_best.pth.tar --img-height 256 --img-width 832 --dataset-dir /home/stud/xiji/storage/group/dataset_mirrors/01_incoming/kitti_odom_color/sequences/ --sequence 09 --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/best_without_unty_seq09/"
+            "args": "--pretrained-dispnet /home/stud/xiji/SC-Depth_Anything/checkpoints/combined_unty_nusc_6Hz/05-24-12:57/dispnet_checkpoint_16.pth.tar --pretrained-posenet /home/stud/xiji/SC-Depth_Anything/checkpoints/combined_unty_nusc_6Hz/05-24-12:57/exp_pose_checkpoint_16.pth.tar --img-height 256 --img-width 416 --dataset-dir /home/stud/xiji/storage/slurm/nuscenes_416_256/ --sequence scene-0012_0 --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/no_important/"
+
+        },
+        {
+            "name": "vo_visualization_kitti",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            // "args": "--pretrained-posenet /home/stud/xiji/SC-Depth_Anything/checkpoints/resnet50_pose_256/01-28-12:00/exp_pose_model_best.pth.tar --img-height 256 --img-width 832 --dataset-dir /home/stud/xiji/storage/group/dataset_mirrors/01_incoming/kitti_odom_color/sequences/ --sequence 09 --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/best_without_unty_seq09/"
+            "args": "--pretrained-dispnet /home/stud/xiji/SC-Depth_Anything/checkpoints/wo_dym_mask/04-01-12:26/dispnet_checkpoint_8.pth.tar --pretrained-posenet /home/stud/xiji/SC-Depth_Anything/checkpoints/wo_dym_mask/04-01-12:26/exp_pose_checkpoint_8.pth.tar --img-height 256 --img-width 832 --dataset-dir /home/stud/xiji/storage/group/dataset_mirrors/01_incoming/kitti_odom_color/sequences/ --sequence 03 --output-dir /home/stud/xiji/SC-Depth_Anything/comparation/no_important/"
+        },
+        {
+            "name": "intermediate visualization_nusc",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                // "--pretrained-dispnet", "/home/stud/xiji/SC-Depth_Anything/checkpoints/combined_unty_nusc_6Hz/05-24-12:57/dispnet_checkpoint_16.pth.tar",
+                // "--pretrained-posenet", "/home/stud/xiji/SC-Depth_Anything/checkpoints/combined_unty_nusc_6Hz/05-24-12:57/exp_pose_checkpoint_16.pth.tar",
+                "--pretrained-model", "checkpoints/GCPR_2025_nusc/07-24-13:12/checkpoint_epoch=25.ckpt",
+                "--img-height", "256",
+                "--img-width", "416",
+                "--dataset", "nuscenes",
+                // "--dataset-dir", "/home/stud/xiji/storage/slurm/nuscenes_416_256/",
+                // "--output-dir", "/home/stud/xiji/SC-Depth_Anything/comparation/no_important/",
+                // "--tgt-img", "/home/stud/xiji/storage/slurm/nuscenes_416_256/scene-0184_0/n015-2018-07-27-11-36-48+0800__CAM_FRONT__1532662952762460.jpg",
+                // "--ref-img", "/home/stud/xiji/storage/slurm/nuscenes_416_256/scene-0184_0/n015-2018-07-27-11-36-48+0800__CAM_FRONT__1532662952612460.jpg",
+                "--tgt-img", "storage/nuscenes_416_256/scene-0184_0/n015-2018-07-27-11-36-48+0800__CAM_FRONT__1532662952762460.jpg",
+                "--ref-img", "storage/nuscenes_416_256/scene-0184_0/n015-2018-07-27-11-36-48+0800__CAM_FRONT__1532662952612460.jpg",
+            ]
+        },
+        {
+            "name": "intermediate visualization_kitti",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--pretrained-dispnet", "/home/stud/xiji/SC-Depth_Anything/checkpoints/wo_dym_mask/04-01-12:26/dispnet_checkpoint_8.pth.tar",
+                "--pretrained-posenet", "/home/stud/xiji/SC-Depth_Anything/checkpoints/wo_dym_mask/04-01-12:26/exp_pose_checkpoint_8.pth.tar",
+                // "--pretrained-dispnet", "/home/stud/xiji/SC-Depth_Anything/checkpoints/wo_dym_mask——single_unty/04-06-12:38/dispnet_checkpoint_8.pth.tar",
+                // "--pretrained-posenet", "/home/stud/xiji/SC-Depth_Anything/checkpoints/wo_dym_mask——single_unty/04-06-12:38/exp_pose_checkpoint_8.pth.tar",
+                "--img-height", "256",
+                "--img-width", "832",
+                "--tgt-img", "/home/stud/xiji/storage/slurm/kitti_vo_256/04_2/000011.jpg",
+                "--ref-img", "/home/stud/xiji/storage/slurm/kitti_vo_256/04_2/000010.jpg",
+            ]
+        }
+    ]
+}
