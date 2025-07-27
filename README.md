@@ -13,10 +13,10 @@ conda activate coprou
 # Install PyTorch and torchaudio (version 2.7.0 with CUDA 11.8 support)
 # ⚠️ Make sure to install the version that matches your local CUDA version.
 # You can find other compatible versions at https://pytorch.org/get-started/previous-versions/
-pip install torch==2.7.0+cu118 torchaudio==2.7.0+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
+pip install torch==2.7.0+cu118 torchvision==0.22.0+cu118 torchaudio==2.7.0+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
 
 # We use xFormers==0.0.30. Make sure to install a version compatible with your installed PyTorch version.
-pip install xformers==0.0.30
+pip install xformers==0.0.30 --extra-index-url https://download.pytorch.org/whl/cu118
 
 # Install other required Python packages
 pip install -r requirements.txt
@@ -61,7 +61,11 @@ python data/nusc.py --config data/nuscenes_config/local_nusc.yaml
 ```
 Processed data will be saved under folder `\storage`
 ### Checkpoints
-Create folder `\checkpoints` and put the following checkpoints under the created folder.
+Create folder `\checkpoints`,
+```bash
+mkdir -p checkpoints
+```
+and put the following checkpoints under the created folder.
 #### CoProU-VO
 Download **[CoProU-VO checkpoints](https://drive.google.com/drive/folders/1_wW9djPj9zWqflDkW6NsF11I5MIu5G1S?usp=drive_link)**.
 
@@ -70,8 +74,6 @@ Download **[CoProU-VO checkpoints](https://drive.google.com/drive/folders/1_wW9d
 Download **[Depth-Anything-V2-Small](https://huggingface.co/depth-anything/Depth-Anything-V2-Small/resolve/main/depth_anything_v2_vits.pth?download=true)** and **[ViT-S/14 distilled](https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth)**
 
 ```bash
-mkdir -p checkpoints
-
 # Download Depth-Anything-V2-Small checkpoint
 wget -O checkpoints/depth_anything_v2_vits.pth "https://huggingface.co/depth-anything/Depth-Anything-V2-Small/resolve/main/depth_anything_v2_vits.pth?download=true"
 
@@ -94,8 +96,8 @@ python intermediate_visualization.py \
   --img-height 256 \
   --img-width 832 \
   --dataset kitti\
-  --tgt-img storage/kitti_vo_256/04_2/000011.jpg \
-  --ref-img storage/kitti_vo_256/04_2/000010.jpg
+  --tgt-img storage/kitti_vo_256/05_2/002354.jpg \
+  --ref-img storage/kitti_vo_256/05_2/002353.jpg
 
 ```
 
@@ -106,9 +108,9 @@ python intermediate_visualization.py \
   --pretrained-posenet checkpoints/exp_pose_checkpoint_nusc.pth.tar \
   --img-height 256 \
   --img-width 416 \
-  --dataset nusc\
-  --tgt-img storage/nuscenes_416_256/scene-0184_0/n015-2018-07-27-11-36-48+0800__CAM_FRONT__1532662952762460.jpg\
-  --ref-img storage/nuscenes_416_256/scene-0184_0/n015-2018-07-27-11-36-48+0800__CAM_FRONT__1532662952612460.jpg
+  --dataset nuscenes\
+  --tgt-img storage/nuscenes_416_256/scene-0685_0/n008-2018-08-28-16-16-48-0400__CAM_FRONT__1535488216112404.jpg\
+  --ref-img storage/nuscenes_416_256/scene-0685_0/n008-2018-08-28-16-16-48-0400__CAM_FRONT__1535488216262404.jpg
 
 ```
 
@@ -124,7 +126,7 @@ torchrun --nproc_per_node=2 --master-port=29755 lightning_train.py storage/kitti
 --encoder vits --dan \
 --epochs 75 -b12 -s0.1 -c0.6 --sequence-length 3 \
 --with-ssim 1 --with-mask 0 --with-auto-mask 1 --with-pretrain 1 \
---name kitti --lr 5e-4 \
+--name kitti --lr 5e-4 
 ```
 
 ### Training on nuScenes
@@ -134,8 +136,11 @@ torchrun --nproc_per_node=4 --master-port=29755 lightning_train.py storage/nusce
 --encoder vits --dan \
 --epochs 25 -b8 -s0.1 -c0.6 --skip-frames 2 --sequence-length 3 \
 --with-ssim 1 --with-mask 0 --with-auto-mask 1 --with-pretrain 1 \
---name nusc --lr 5e-4 \
+--name nusc --lr 5e-4 
 ```
+
+#### Tensorboard and Checkpoints are saved under `\checkpoints`. 
+
 
 ## Evaluation
 
@@ -143,7 +148,7 @@ torchrun --nproc_per_node=4 --master-port=29755 lightning_train.py storage/nusce
 
 On KITTI:
 ```bash
-python test_vo.py --pretrained-posenet checkpoints/checkpoints/exp_pose_checkpoint_kitti.pth.tar --img-height 256 --img-width 832 --dataset-dir storage/KITTI_odometry/dataset/sequences/ --sequence 09 --output-dir eval_result/kitti/
+python test_vo.py --pretrained-posenet checkpoints/exp_pose_checkpoint_kitti.pth.tar --img-height 256 --img-width 832 --dataset-dir storage/KITTI_odometry/dataset/sequences/ --sequence 09 --output-dir eval_result/kitti/
 
 python kitti_eval/eval_odom.py --result=eval_result/kitti/ --align='7dof'
 ```
@@ -151,16 +156,16 @@ python kitti_eval/eval_odom.py --result=eval_result/kitti/ --align='7dof'
 On nuScenes:
 ```bash
 # eval
-python test_vo_nusc.py --pretrained-posenet checkpoints/checkpoints/exp_pose_checkpoint_nusc.pth.tar --interval 2 --img-height 256 --img-width 416 --dataset-dir storage/nuscenes_416_256/ --output-dir eval_result/nusc
+python test_vo_nusc.py --pretrained-posenet checkpoints/exp_pose_checkpoint_nusc.pth.tar --img-height 256 --img-width 416 --dataset-dir storage/nuscenes_416_256/ --output-dir eval_result/nusc
 
-python nusc_eval/eval_odom.py --result=eval_result/nusc --align='7dof'
+python nusc_eval/eval_odom.py --result=eval_result/nusc/checkpoints/exp_pose_checkpoint_nusc/ --align='7dof'
 ```
 
 ```bash
 # test
-python test_vo_nusc.py --test --pretrained-posenet checkpoints/checkpoints/exp_pose_checkpoint_nusc.pth.tar --interval 2 --img-height 256 --img-width 416 --dataset-dir storage/nuscenes_416_256/ --output-dir eval_result/nusc
+python test_vo_nusc.py --test --pretrained-posenet checkpoints/exp_pose_checkpoint_nusc.pth.tar --img-height 256 --img-width 416 --dataset-dir storage/nuscenes_416_256/ --output-dir eval_result/nusc
 
-python nusc_eval/eval_odom.py --test --result=eval_result/nusc --align='7dof'
+python nusc_eval/eval_odom.py --test --result=eval_result/nusc/checkpoints/exp_pose_checkpoint_nusc/ --align='7dof'
 ```
 
 
@@ -176,16 +181,16 @@ python kitti_eval/eval_odom.py --result=eval_result/kitti/ --align='7dof'
 On nuScenes:
 ```bash
 # eval
-python test_vo_nusc.py --pretrained-model <path to the checkpoints auto-saved by training script>  --interval 2 --img-height 256 --img-width 416 --dataset-dir storage/nuscenes_416_256/ --output-dir eval_result/nusc
+python test_vo_nusc.py --pretrained-model <path to the checkpoints auto-saved by training script>  --img-height 256 --img-width 416 --dataset-dir storage/nuscenes_416_256/ --output-dir eval_result/nusc
 
-python nusc_eval/eval_odom.py --result=eval_result/nusc --align='7dof'
+python nusc_eval/eval_odom.py --result=eval_result/nusc/checkpoints/+'<name of your checkpoint>' --align='7dof'
 ```
 
 ```bash
 # test
-python test_vo_nusc.py --test --pretrained-model <path to the checkpoints auto-saved by training script>  --interval 2 --img-height 256 --img-width 416 --dataset-dir storage/nuscenes_416_256/ --output-dir eval_result/nusc
+python test_vo_nusc.py --test --pretrained-model <path to the checkpoints auto-saved by training script>  --img-height 256 --img-width 416 --dataset-dir storage/nuscenes_416_256/ --output-dir eval_result/nusc
 
-python nusc_eval/eval_odom.py --test --result=eval_result/nusc --align='7dof'
+python nusc_eval/eval_odom.py --test --result=eval_result/nusc/checkpoints/+'<name of your checkpoint>' --align='7dof'
 ```
 
 ## If you find our work useful in your research please consider citing our paper:
