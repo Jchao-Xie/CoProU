@@ -1,6 +1,26 @@
 <div align="center">
-<h1>CoProU-VO: Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry</h1>
+
+# CoProU-VO: Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry
+
+### **[Jingchao Xie\*](https://www.linkedin.com/in/jingchao-xie-16b724297)\***<sup>1,3</sup>, **[Oussema Dhaouadi\*](https://cvg.cit.tum.de/members/dhou)\***<sup>1,2,3</sup>†, **[Weirong Chen](https://wrchen530.github.io/)**<sup>1,3</sup>, **[Johannes Meier](https://cvg.cit.tum.de/members/mejo)**<sup>1,2,3</sup>, **[Jacques Kaiser](https://jacqueskaiser.com/)**<sup>2</sup>, **[Daniel Cremers](https://cvg.cit.tum.de/members/cremers)**<sup>1,3</sup>
+
+<sup>1</sup> [Computer Vision Group at Technical University of Munich (TUM)](https://cvg.cit.tum.de/)  
+<sup>2</sup> [DeepScenario](https://www.deepscenario.com)  
+<sup>3</sup> [Munich Center for Machine Learning (MCML)](https://mcml.ai)
+
+\* Shared first authorship  † Corresponding author  
+
 </div>
+
+
+## Contribution
+
+We present **Combined Projected Uncertainty Visual Odometry (CoProU-VO)** —  
+a novel visual odometry approach that robustly handles regions violating the static scene assumption within an unsupervised visual odometry framework.
+
+![Uncertainty Visualization](assets/image.png)
+
+**Figure**: Gray areas in the images indicate invalid regions excluded from loss calculation. Photometric residual brightness represents error magnitude, while projection brightness reflects uncertainty.  **Dynamic objects** may appear distorted due to the static scene assumption.  Our method robustly masks high-uncertainty regions, distinguishes parked cars (e.g., green box) from moving cars (e.g., red boxes), and detects **occluded parts** of parked vehicles (e.g., yellow box).  
 
 ## Preparation
 
