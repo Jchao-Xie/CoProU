@@ -160,6 +160,29 @@
 </section>
 
 <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3 has-text-left">Method</h2>
+          <img src="static/images/pipeline.png" alt="Method" style="width: 80%; height: auto;">
+          <p class="content has-text-justified">
+              Given two consecutive frames
+(target I<sub>t</sub> and reference I<sub>t′</sub> ), (1) features are extracted using a pre-trained vision transformer backbone, (2) depth maps and uncertainty estimates are produced through a
+decoder network for both frames, (3) relative camera pose is predicted by a PoseNet
+module, (4) projection and warping operations synthesize views between frames, and
+(5) our novel <span>CoProU-VO</span> module integrates uncertainty information from both target and
+reference frames, which is used to (6) compute the uncertainty-aware loss.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
     <div class="hero-body">
         <div class="container">
             <div class="columns is-centered has-text-centered">
