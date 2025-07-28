@@ -214,15 +214,6 @@ python test_vo_nusc.py --test --pretrained-model <path to the checkpoints auto-s
 python nusc_eval/eval_odom.py --test --result=eval_result/nusc/checkpoints/+'<name of your checkpoint>' --align='7dof'
 ```
 
-## If you find our work useful in your research please consider citing our paper:
- 
-    @article{xie2025gcpr, 
-      title={{CoProU-VO:} Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry}, 
-      author={Xie, Jingchao and Dhaouadi, Oussema and Chen, Weirong and Meier, Johannes and Kaiser, Jacques and Cremers, Daniel}, 
-      journal= {DAGM German Conference on Pattern Recognition}, 
-      year={2025} 
-    }
-
 ## Visual Odometry Results on KITTI odometry dataset 
 
 #### CoProU-VO result trained on sequence 00, 02-08
@@ -255,4 +246,13 @@ We appreciate the contributions of the following projects, which have greatly su
 
 This project is licensed under the GNU General Public License v3.0.  
 See the [LICENSE](./LICENSE) file for more details.
+
+## If you find our work useful in your research, please consider citing our paper:
+ 
+    @InProceedings{xie2025gcpr, 
+      title={CoProU-VO: Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry}, 
+      author={Xie, Jingchao and Dhaouadi, Oussema and Chen, Weirong and Meier, Johannes and Kaiser, Jacques and Cremers, Daniel}, 
+      booktitle= {DAGM German Conference on Pattern Recognition}, 
+      year={2025} 
+    }
  
