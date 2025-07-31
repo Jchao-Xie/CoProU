@@ -11,6 +11,8 @@
 
 \* Shared first authorship  † Corresponding author  
 
+[![Project Page](https://img.shields.io/badge/Project-Website-green.svg)](https://jchao-xie.github.io/CoProU/)
+[![arXiv](https://img.shields.io/badge/arXiv–Coming%20Soon-lightgrey?style=flat-square&logo=arxiv)]()
 </div>
 
 
