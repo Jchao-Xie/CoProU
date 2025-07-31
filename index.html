@@ -170,6 +170,23 @@
         <div class="container">
             <div class="columns is-centered has-text-centered">
                 <div class="column">
+                    <h2 class="title is-3 has-text-left">Contribution</h2>
+                    <img src="static\images\dynamic_mask_comparation.png" alt="Contribution" style="width: 80%; height: auto;">
+                    <p class="content has-text-justified">
+                        We compare the <b>self-discovered dynamic mask</b> from <b>SC-Depth</b>, the <b>single uncertainty</b> approach used in <b>D3VO</b> and <b>KPDepth</b>, and our proposed <b>CoProU</b>. The masks are predicted from both target and reference images. Our <b>CoProU</b> accurately identifies and masks regions affected by dynamic objects with sharp boundaries. In contrast, the <b>single uncertainty</b> and <b>self-discovered masks</b> fail to fully cover dynamic regions and incorrectly mask static areas, producing blurry boundaries around object contours.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered has-text-centered">
+                <div class="column">
                     <h2 class="title is-3 has-text-left">Method</h2>
                     <img src="static/images/pipeline.png" alt="Method" style="width: 80%; height: auto;">
                     <p class="content has-text-justified">
@@ -197,8 +214,10 @@
             <div class="columns is-centered has-text-centered">
                 <div class="column">
                     <h2 class="title is-3 has-text-left">Results</h2>
-
-                    <h3 class="title is-4 has-text-left">KITTI</h3>
+                    <h3 class="title is-4 has-text-centered">
+                    Visualization of Depth, RGB, and Uncertainty in Target View
+                    </h3>
+                    <h3 class="title is-4 has-text-centered">KITTI</h3>
                     <div class="columns is-mobile is-centered is-multiline">
                         <div class="column is-half" id="container-0" style="min-width: 500px;">
                             <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
@@ -229,7 +248,7 @@
                     </div>
 
 
-                    <h3 class="title is-4 has-text-left">NuScenes</h3>
+                    <h3 class="title is-4 has-text-centered">NuScenes</h3>
                     <div class="columns is-mobile is-centered is-multiline">
                         <div class="column is-half" id="container-2" style="min-width: 500px;">
                             <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
