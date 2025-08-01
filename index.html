@@ -26,6 +26,7 @@
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
+
 </head>
 <body>
 
@@ -171,9 +172,15 @@
             <div class="columns is-centered has-text-centered">
                 <div class="column">
                     <h2 class="title is-3 has-text-left">Contribution</h2>
-                    <img src="static\images\dynamic_mask_comparation.png" alt="Contribution" style="width: 80%; height: auto;">
+                    <img src="static/images/dynamic_mask_comparation.png" alt="Contribution"
+                         style="width: 80%; height: auto;">
                     <p class="content has-text-justified">
-                        We compare the <b>self-discovered dynamic mask</b> from <b>SC-Depth</b>, the <b>single uncertainty</b> approach used in <b>D3VO</b> and <b>KPDepth</b>, and our proposed <b>CoProU</b>. The masks are predicted from both target and reference images. Our <b>CoProU</b> accurately identifies and masks regions affected by dynamic objects with sharp boundaries. In contrast, the <b>single uncertainty</b> and <b>self-discovered masks</b> fail to fully cover dynamic regions and incorrectly mask static areas, producing blurry boundaries around object contours.
+                        We compare the <b>self-discovered dynamic mask</b> from <b>SC-Depth</b>, the <b>single
+                        uncertainty</b> approach used in <b>D3VO</b> and <b>KPDepth</b>, and our proposed <b>CoProU</b>.
+                        The masks are predicted from both target and reference images. Our <b>CoProU</b> accurately
+                        identifies and masks regions affected by dynamic objects with sharp boundaries. In contrast, the
+                        <b>single uncertainty</b> and <b>self-discovered masks</b> fail to fully cover dynamic regions
+                        and incorrectly mask static areas, producing blurry boundaries around object contours.
                     </p>
 
                 </div>
@@ -212,76 +219,239 @@
     <div class="hero-body">
         <div class="container">
             <div class="columns is-centered has-text-centered">
+
                 <div class="column">
                     <h2 class="title is-3 has-text-left">Results</h2>
-                    <h3 class="title is-4 has-text-centered">
-                    Visualization of Depth, RGB, and Uncertainty in Target View
-                    </h3>
+                    <h2 class="title is-4 has-text-left">Visual Odometry Results</h2>
+                    <img src="static/images/trajectory.png" alt="VO"
+                         style="width: 80%; height: auto;">
+                    <p class="content has-text-justified">
+                        In sequence 01, the hybrid method DF-VO
+                        completely fails, while SC-Depth exhibits larger deviations compared to our
+                        method, which achieves significantly more accurate trajectories. In sequence 09, CoProU-VO
+                        with DepthAnythingV2 demonstrates performance comparable to established
+                        hybrid methods, including DF-VO and KP-Depth-VO,
+                        demonstrating that our approach achieves comparable accuracy to hybrid methods without the
+                        computational overhead of their multi-stage processing pipelines.
+                    </p>
+
+
+                    <h2 class="title is-4 has-text-left">Visual Comparisons of Learned Uncertainty</h2>
+
+                    <div class="container is-max-desktop">
+                        <div class="columns is-mobile is-centered is-multiline">
+                            <!-- Visual Effects. -->
+                            <div class="column">
+                                <div class="content">
+                                    <div class="columns is-centered">
+                                        <div class="column is-full-width">
+                                            <div id="example1" class="bal-container-small">
+
+                                                <div class="bal-after">
+                                                    <img src="static/images/1/combined projected uncertainty.png">
+                                                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                                                        CoProU (Ours)
+                                                    </div>
+                                                </div>
+
+                                                <div class="bal-before" style="width:70.06369426751593%;">
+                                                    <div class="bal-before-inset" style="width: 628px;">
+                                                        <img src="static/images/1/single uncertainty.png">
+                                                        <div class="bal-beforePosition beforeLabel">
+                                                            SC-Depth - Single Uncertainty
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="bal-handle" style="left:70.06369426751593%;">
+                                                    <span class=" handle-left-arrow"></span>
+                                                    <span class="handle-right-arrow"></span>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div id="example2" class="bal-container-small">
+
+                                                <div class="bal-after">
+                                                    <img src="static/images/2/combined projected uncertainty.png">
+                                                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                                                        CoProU (Ours)
+                                                    </div>
+                                                </div>
+
+                                                <div class="bal-before" style="width:33.9171974522293%;">
+                                                    <div class="bal-before-inset" style="width: 628px;">
+                                                        <img src="static/images/2/target%20uncertainty.png">
+                                                        <div class="bal-beforePosition beforeLabel">
+                                                            SC-Depth - Single Uncertainty
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="bal-handle" style="left:33.9171974522293%;">
+                                                    <span class=" handle-left-arrow"></span>
+                                                    <span class="handle-right-arrow"></span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--/ Visual Effects. -->
+
+                            <!-- Matting. -->
+                            <div class="column">
+                                <div class="columns is-centered">
+                                    <div class="column content">
+
+                                        <div id="example4" class="bal-container-small">
+                                            <div class="bal-after">
+                                                <img src="static/images/3/combined projected uncertainty.png">
+                                                <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                                                    CoProU (Ours)
+                                                </div>
+                                            </div>
+
+                                            <div class="bal-before" style="width:7.165605095541402%;">
+                                                <div class="bal-before-inset">
+                                                    <img src="static/images/3/target%20uncertainty.png">
+                                                    <div class="bal-beforePosition beforeLabel">
+                                                        SC-Depth - Single Uncertainty
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="bal-handle" style="left:7.165605095541402%;">
+                                                <span class=" handle-left-arrow"></span>
+                                                <span class="handle-right-arrow"></span>
+                                            </div>
+
+                                        </div>
+
+                                        <div id="example5" class="bal-container-small">
+                                            <div class="bal-after">
+                                                <img src="static/images/4/combined projected uncertainty.png">
+                                                <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                                                    CoProU (Ours)
+                                                </div>
+                                            </div>
+
+                                            <div class="bal-before" style="width:46.17834394904459%;">
+                                                <div class="bal-before-inset">
+                                                    <img src="static/images/4/target%20uncertainty.png">
+                                                    <div class="bal-beforePosition beforeLabel">
+                                                        SC-Depth - Single Uncertainty
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="bal-handle" style="left:46.17834394904459%;">
+                                                <span class=" handle-left-arrow"></span>
+                                                <span class="handle-right-arrow"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <h2 class="title is-4 has-text-left">Visualizations in Sequences</h2>
                     <h3 class="title is-4 has-text-centered">KITTI</h3>
                     <div class="columns is-mobile is-centered is-multiline">
-                        <div class="column is-half" id="container-0" style="min-width: 500px;">
+                        <div class="column is-half" id="container-0" style="width: 100%;">
                             <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
                                 Sequence 4
                             </h5>
-                            <video width="100%" loop="" style="margin-top: 5px;" onmouseover="this.controls = true"
-                                   onmouseout="this.controls = false">
-                                <source src="static/videos/seq04.mp4"
-                                        type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <div>
+                                <div class="container-video">
+                                    <video class="video-element" autoplay loop muted playsinline
+                                           onmouseover="this.controls = true" onmouseout="this.controls = false">
+                                        <source src="static/videos/seq04.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="video-label video-label-left">Depth</div>
+                                    <div class="video-label video-label-center">RGB</div>
+                                    <div class="video-label video-label-right">CoProU</div>
+                                </div>
+
+                            </div>
+
 
                         </div>
 
-                        <div class="column is-half" id="container-1" style="min-width: 500px;">
-                            <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
-                                Sequence 5
-                            </h5>
-                            <video width="100%" loop="" style="margin-top: 5px;"
-                                   onmouseover="this.controls = true"
-                                   onmouseout="this.controls = false">
-                                <source src="static/videos/seq05.mp4"
-                                        type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                        <div class="columns is-mobile is-centered is-multiline">
 
+                            <div class="column is-half" id="container-1" style="width: 100%;">
+                                <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
+                                    Sequence 5
+                                </h5>
+                                <div class="container-video">
+                                    <video class="video-element" autoplay loop muted playsinline
+                                           onmouseover="this.controls = true" onmouseout="this.controls = false">
+                                        <source src="static/videos/seq05.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="video-label video-label-left">Depth</div>
+                                    <div class="video-label video-label-center">RGB</div>
+                                    <div class="video-label video-label-right">CoProU</div>
+                                </div>
+
+                            </div>
                         </div>
+
+                        <h3 class="title is-4 has-text-centered">NuScenes</h3>
+                        <div class="columns is-mobile is-centered is-multiline">
+                            <div class="column is-half" id="container-2" style="width: 100%;">
+                                <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
+                                    Scene 0685 (Front Camera)
+                                </h5>
+
+                                <div class="container-video">
+                                    <video class="video-element" autoplay loop muted playsinline
+                                           onmouseover="this.controls = true" onmouseout="this.controls = false">
+                                        <source src="static/videos/seqscene-0685_0.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="video-label video-label-left">Depth</div>
+                                    <div class="video-label video-label-center">RGB</div>
+                                    <div class="video-label video-label-right">CoProU</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="columns is-mobile is-centered is-multiline">
+
+                            <div class="column is-half" id="container-3" style="width: 100%;">
+                                <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
+                                    Scene 0733 (Front Camera)
+                                </h5>
+
+
+                                <div class="container-video">
+                                    <video class="video-element" autoplay loop muted playsinline
+                                           onmouseover="this.controls = true" onmouseout="this.controls = false">
+                                        <source src="static/videos/seqscene-0733_0.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="video-label video-label-left">Depth</div>
+                                    <div class="video-label video-label-center">RGB</div>
+                                    <div class="video-label video-label-right">CoProU</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
                     </div>
-
-
-                    <h3 class="title is-4 has-text-centered">NuScenes</h3>
-                    <div class="columns is-mobile is-centered is-multiline">
-                        <div class="column is-half" id="container-2" style="min-width: 500px;">
-                            <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
-                                Scene 0685 (Front Camera)
-                            </h5>
-                            <video width="100%" loop="" style="margin-top: 5px;" onmouseover="this.controls = true"
-                                   onmouseout="this.controls = false">
-                                <source src="static/videos/seqscene-0685_0.mp4"
-                                        type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
-                        </div>
-
-                        <div class="column is-half" id="container-3" style="min-width: 500px;">
-                            <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
-                                Scene 0733 (Front Camera)
-                            </h5>
-                            <video width="100%" loop="" style="margin-top: 5px;" onmouseover="this.controls = true"
-                                   onmouseout="this.controls = false">
-                                <source src="static/videos/seqscene-0733_0.mp4"
-                                        type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 <section class="section" id="bibtex">
@@ -323,6 +493,26 @@
         </div>
     </div>
 </footer>
+
+
+<script src="static/js/script.js"></script>
+
+<script>
+    new BeforeAfter({
+        id: '#example1'
+    });
+    new BeforeAfter({
+        id: '#example2'
+    });
+    new BeforeAfter({
+        id: '#example4'
+    });
+    new BeforeAfter({
+        id: '#example5'
+    });
+
+</script>
+
 
 </body>
 </html>
