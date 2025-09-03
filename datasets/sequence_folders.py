@@ -5,7 +5,7 @@ from path import Path
 import custom_transforms
 from torchvision.transforms import Compose
 from depth_anything_v2.util.transform import Resize, NormalizeImage, PrepareForNet
-from datasets.nuscenes_config.splits import train as training_list, val as validation_list
+from data.nuscenes_config.splits import train as training_list, val as validation_list
 import random
 import os
 import cv2
