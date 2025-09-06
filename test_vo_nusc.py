@@ -19,7 +19,7 @@ from utils import tensor2array
 
 import cv2
 
-from datasets.nuscenes_config.splits import val as validation_list
+from data.nuscenes_config.splits import val as validation_list
 
 parser = argparse.ArgumentParser(description='Script for visualizing depth map and masks',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
