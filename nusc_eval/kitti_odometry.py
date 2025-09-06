@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 import os
 from glob import glob
-from datasets.nuscenes_config.splits import val as validation_list
+from data.nuscenes_config.splits import val as validation_list
 
 
 def scale_lse_solver(X, Y):
