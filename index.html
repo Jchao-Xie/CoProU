@@ -225,9 +225,9 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
                             </tr>
                             <tr>
                                 <th>K</th><th>N</th><th>W</th>
-                                <th>ATE</th><th>t<sub>err</sub></th><th>r<sub>err</sub></th>
-                                <th>ATE</th><th>RPE<sub>trans</sub></th><th>RPE<sub>rot</sub></th>
-                                <th>ATE</th><th>RPE<sub>trans</sub></th><th>RPE<sub>rot</sub></th>
+                                <th>ATE &darr;</th><th>t<sub>err</sub> &darr;</th><th>r<sub>err</sub> &darr;</th>
+                                <th>ATE &darr;</th><th>RPE<sub>trans</sub> &darr;</th><th>RPE<sub>rot</sub> &darr;</th>
+                                <th>ATE &darr;</th><th>RPE<sub>trans</sub> &darr;</th><th>RPE<sub>rot</sub> &darr;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -299,6 +299,25 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
 
 
 <!-- Reordered Sections -->
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered has-text-centered">
+                <div class="column">
+                    <h2 class="title is-3 has-text-left">Inference Results</h2>
+                    <video id="inference" autoplay controls muted loop playsinline style="width: 80%; height: auto;">
+                        <source src="static/videos/inference.mp4" type="video/mp4">
+                    </video>
+                    <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
+                        Our inference outputs include RGB, Depth, Disparity, and uncertainty estimations produced natively by the CoProU-VO-MF architecture.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="hero is-small">
     <div class="hero-body">
         <div class="container">
@@ -321,8 +340,12 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
                 <div class="column">
                     <h2 class="title is-3 has-text-left">3D reconstruction results</h2>
                     <img src="static/images/reconstruction_3d.png" alt="3D reconstruction results" style="width: 80%; height: auto;">
+                    <br><br>
+                    <video id="reconstruction" autoplay controls muted loop playsinline style="width: 80%; height: auto;">
+                        <source src="static/videos/reconstruction.mp4" type="video/mp4">
+                    </video>
                     <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
-                        Our approach enables high-quality multi-frame 3D reconstruction by accurately filtering dynamic objects and effectively leveraging geometric consistency across frames.
+                        Our approach enables high-quality multi-frame 3D reconstruction by accurately filtering dynamic objects and effectively leveraging geometric consistency across frames. The sequence demonstrates the point cloud alongside camera poses learned entirely in a self-supervised fashion.
                     </p>
                 </div>
             </div>
@@ -395,7 +418,8 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
                     <div class="column has-text-centered">
                         <div class="is-size-5 publication-authors">
                            <span class="author-block">
-                              <b>German Conference on Pattern Recognition (GCPR) 2025 <span style="color:#ff2600">(Oral · Best Paper Award)</span></b>
+                              <b>German Conference on Pattern Recognition (GCPR) 2025</b><br>
+                              <span style="color:#ff2600"><b>Oral · Best Paper Award</b></span>
                             </span>
                         </div>
                     </div>
