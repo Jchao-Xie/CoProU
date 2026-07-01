@@ -62,18 +62,7 @@
 <!-- ========================================== -->
 <!-- IJCV 2026 VERSION                          -->
 <!-- ========================================== -->
-<section class="hero teaser">
-    <div class="container">
-        <div class="hero-body">
-            <center><img src="./static/images/teaser.png" alt="Teaser Image" class="teaser-image"
-                         style="width: 100%; max-width: 1200px;"></center>
-            <h2 class="subtitle has-text-centered">
-                We propose <span class="method">CoProU-VO</span>, an unsupervised visual odometry method that improves
-                pose estimation in dynamic scenes by propagating and combining uncertainty across consecutive frames.
-            </h2>
-        </div>
-    </div>
-</section>
+
 <div id="content-ijcv">
 <section class="hero">
     <div class="hero-body">
@@ -120,7 +109,7 @@
                     <div class="column has-text-centered">
                         <div class="is-size-5 publication-authors">
                            <span class="author-block">
-                              <b>IJCV 2026</b>
+                              <b>International Journal of Computer Vision (IJCV) 2026</b>
                             </span>
                         </div>
                     </div>
@@ -133,7 +122,7 @@
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper | Springer</span>
+                  <span>Paper</span>
                 </a>
               </span>
                             <span class="link-block">
@@ -149,6 +138,18 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section class="hero teaser">
+    <div class="container">
+        <div class="hero-body">
+            <center><img src="./static/images/teaser.png" alt="Teaser Image" class="teaser-image"
+                         style="width: 100%; max-width: 1200px;"></center>
+            <h2 class="subtitle has-text-centered">
+                We propose <span class="method">CoProU-VO</span>, an unsupervised visual odometry method that improves
+                pose estimation in dynamic scenes by propagating and combining uncertainty across consecutive frames.
+            </h2>
         </div>
     </div>
 </section>
@@ -171,21 +172,7 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
     </div>
 </section>
 
-<section class="hero is-small">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered has-text-centered">
-                <div class="column">
-                    <h2 class="title is-3 has-text-left">3D Reconstruction Result</h2>
-                    <img src="static/images/reconstruction_3d.png" alt="3D Reconstruction Result" style="width: 80%; height: auto;">
-                    <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
-                        Our approach enables high-quality multi-frame 3D reconstruction by accurately filtering dynamic objects and effectively leveraging geometric consistency across frames.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 
 <section class="hero is-small">
@@ -223,8 +210,9 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
                         We evaluate our coupled multi-frame formulation (CoProU-VO-MF) against our decoupled two-frame baseline (CoProU-VO-2F) and the large-scale pretrained VGGT model. Our method achieves state-of-the-art results purely through self-supervised training without any ground truth.
                     </p>
                 </div>
+                <p style="font-size: 0.9em; margin-bottom: 1rem;">Best results are in <b>bold</b>, second best are <u>underlined</u>. Click on column headers to sort.</p>
                 <div class="table-container">
-                    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="font-size: 0.9em; margin: 0 auto;">
+                    <table id="resultsTable" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="font-size: 0.9em; margin: 0 auto;">
                         <thead>
                             <tr>
                                 <th rowspan="2" style="vertical-align: middle;">Method</th>
@@ -307,12 +295,16 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
     </div>
 </section>
 
+
+
+
+<!-- Reordered Sections -->
 <section class="hero is-small">
     <div class="hero-body">
         <div class="container">
             <div class="columns is-centered has-text-centered">
                 <div class="column">
-                    <h2 class="title is-3 has-text-left">Multi-Frame Trajectories</h2>
+                    <h2 class="title is-3 has-text-left">VO qualitative results</h2>
                     <img src="static/images/trajectories_mf.png" alt="Trajectories" style="width: 80%; height: auto;">
                     <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
                         Our multi-frame approach yields robust global trajectories even in challenging dynamic environments where the baseline two-frame method exhibits drift.
@@ -322,7 +314,21 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
         </div>
     </div>
 </section>
-
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered has-text-centered">
+                <div class="column">
+                    <h2 class="title is-3 has-text-left">3D reconstruction results</h2>
+                    <img src="static/images/reconstruction_3d.png" alt="3D reconstruction results" style="width: 80%; height: auto;">
+                    <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
+                        Our approach enables high-quality multi-frame 3D reconstruction by accurately filtering dynamic objects and effectively leveraging geometric consistency across frames.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="section" id="bibtex-ijcv">
 
     <div class="container is-max-desktop content">
@@ -389,7 +395,7 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
                     <div class="column has-text-centered">
                         <div class="is-size-5 publication-authors">
                            <span class="author-block">
-                              <b>GCPR 2025 <span style="color:#ff2600">(Oral · Best Paper Award)</span></b>
+                              <b>German Conference on Pattern Recognition (GCPR) 2025 <span style="color:#ff2600">(Oral · Best Paper Award)</span></b>
                             </span>
                         </div>
                     </div>
@@ -427,6 +433,18 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section class="hero teaser">
+    <div class="container">
+        <div class="hero-body">
+            <center><img src="./static/images/teaser.png" alt="Teaser Image" class="teaser-image"
+                         style="width: 100%; max-width: 1200px;"></center>
+            <h2 class="subtitle has-text-centered">
+                We propose <span class="method">CoProU-VO</span>, an unsupervised visual odometry method that improves
+                pose estimation in dynamic scenes by propagating and combining uncertainty across consecutive frames.
+            </h2>
         </div>
     </div>
 </section>
@@ -835,6 +853,58 @@ function showVersion(version) {
     }
 }
 </script>
+
+<script>
+function sortTable(tableId, colIndex, isNumeric) {
+    var table = document.getElementById(tableId);
+    var tbody = table.tBodies[0];
+    var rows = Array.from(tbody.rows);
+    var asc = table.getAttribute("data-sort-dir") === "asc";
+    table.setAttribute("data-sort-dir", asc ? "desc" : "asc");
+    
+    rows.sort(function(a, b) {
+        var aText = a.cells[colIndex].innerText.trim();
+        var bText = b.cells[colIndex].innerText.trim();
+        
+        // Handle bold and underline correctly by extracting text
+        if(isNumeric) {
+            var aVal = parseFloat(aText) || 0;
+            var bVal = parseFloat(bText) || 0;
+            return asc ? aVal - bVal : bVal - aVal;
+        } else {
+            return asc ? aText.localeCompare(bText) : bText.localeCompare(aText);
+        }
+    });
+    
+    rows.forEach(function(row) {
+        tbody.appendChild(row);
+    });
+}
+
+// Attach listeners to table headers
+document.addEventListener('DOMContentLoaded', function() {
+    var table = document.getElementById("resultsTable");
+    if(table) {
+        var headers = table.querySelectorAll('thead tr:last-child th');
+        // The first two columns span both rows, we will just handle the data columns for simplicity
+        // Actually, let's attach to all bottom-level headers
+        headers.forEach((th, index) => {
+            th.style.cursor = 'pointer';
+            th.onclick = function() {
+                // Determine actual column index
+                var actualCol = index + 2; // offset for Method and Trainable which are on first tr
+                sortTable("resultsTable", actualCol, true);
+            };
+        });
+        var topHeaders = table.querySelectorAll('thead tr:first-child th');
+        topHeaders[0].style.cursor = 'pointer';
+        topHeaders[0].onclick = function() { sortTable("resultsTable", 0, false); };
+        topHeaders[1].style.cursor = 'pointer';
+        topHeaders[1].onclick = function() { sortTable("resultsTable", 1, false); };
+    }
+});
+</script>
 </body>
+
 
 </html>
