@@ -1,0 +1,80 @@
+# Template for the dataset config
+data:
+  # The code still looks too complicated. I should refactor this again (do I have time?...)
+  train:
+    _target_: vggt_training.data.dynamic_dataloader.DynamicTorchDataset
+    num_workers: 2
+    max_img_per_gpu:  4 # 48
+    # Shuffling in PyTorch DataLoader can sometimes copy large dicts and exceed CPU memory
+    # (see: https://github.com/pytorch/pytorch/issues/13246).
+    # To avoid this, set shuffle=False and enable common_config.inside_random=True instead.
+    shuffle: True
+    pin_memory: False
+    common_config:  # common config for evaluation
+      fix_img_num: -1 # -1 means do not fix the number of images
+      fix_aspect_ratio: 1.0
+      load_track: False
+      track_num: 1024
+      training: True
+      inside_random: True
+      img_size: 224
+      patch_size: 14
+      rescale: True
+      rescale_aug: True
+      landscape_check: False
+      debug: False
+      get_nearby: True
+      load_depth: True
+      img_nums: [3, 8]
+      max_img_per_gpu: 48
+      allow_duplicate_img: False
+      repeat_batch: False
+
+      augs:
+        cojitter: True
+        cojitter_ratio: 0
+        scales: [1, 1]
+        aspects: [0.3, 0.66]
+        color_jitter:
+          brightness: 0.2
+          contrast: 0.2
+          saturation: 0.2
+          hue: 0.1   
+          p: 0.5
+        gray_scale: False
+        gau_blur: False
+  val:
+    _target_: vggt_training.data.dynamic_dataloader.DynamicTorchDataset
+    num_workers: 2
+    max_img_per_gpu: 48
+    # Shuffling in PyTorch DataLoader can sometimes copy large dicts and exceed CPU memory
+    # (see: https://github.com/pytorch/pytorch/issues/13246).
+    # To avoid this, set shuffle=False and enable common_config.inside_random=True instead.
+    shuffle: True
+    pin_memory: False
+    common_config:  # common config for evaluation
+      fix_img_num: -1 # -1 means do not fix the number of images
+      fix_aspect_ratio: 1.0
+      load_track: False
+      track_num: 1024
+      training: False
+      inside_random: True
+      img_size: 224
+      patch_size: 14
+      rescale: True
+      rescale_aug: False
+      landscape_check: False
+      debug: False
+      get_nearby: True
+      load_depth: True
+      img_nums: [3, 8]
+      allow_duplicate_img: True
+
+      augs:
+        cojitter: True
+        cojitter_ratio: 0
+        scales: null
+        aspects: [1.0, 1.0]
+        color_jitter: null
+        gray_scale: False
+        gau_blur: False
