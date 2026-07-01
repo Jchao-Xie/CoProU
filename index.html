@@ -36,24 +36,190 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered">
                 <div class="column has-text-centered">
-                    <h1 class="title is-1 publication-title">CoProU-VO: Combining Projected Uncertainty for End-to-End
-                        Unsupervised Monocular Visual Odometry</h1>
+                    <h1 class="title is-1 publication-title">Combined Projected Uncertainty for Visual Odometry</h1>
+                    <div class="tabs is-centered is-toggle is-toggle-rounded is-medium" style="margin-top: 2rem;">
+                        <ul>
+                            <li id="tab-ijcv" class="is-active">
+                                <a onclick="showVersion('ijcv')">
+                                    <span class="icon is-small"><i class="fas fa-book"></i></span>
+                                    <span>IJCV 2026 Version</span>
+                                </a>
+                            </li>
+                            <li id="tab-gcpr">
+                                <a onclick="showVersion('gcpr')">
+                                    <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+                                    <span>GCPR 2025 Version</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- IJCV 2026 VERSION                          -->
+<!-- ========================================== -->
+<div id="content-ijcv">
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h2 class="title is-3 publication-title">Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame</h2>
                     <div class="is-size-5 publication-authors">
                         <span class="author-block">
               <a target="_blank"
-                 href="https://www.linkedin.com/in/jingchao-xie-16b724297/">Jingchao Xie</a><sup>*,1,3</sup>
+                 href="https://www.linkedin.com/in/jingchao-xie-16b724297/">Jingchao Xie</a><sup>1,3</sup>,
             </span>
                         <span class="author-block">
               <a target="_blank"
-                 href="https://ussaema.github.io/">Oussema Dhaouadi</a><sup>*,1,2,3</sup>
+                 href="https://ussaema.github.io/">Oussema Dhaouadi</a><sup>1,2,3</sup>,
             </span>
                         <span class="author-block">
-              <a target="_blank" href="https://wrchen530.github.io/">Weirong Chen</a><sup>1,3</sup>
+              <a target="_blank" href="https://wrchen530.github.io/">Weirong Chen</a><sup>1,3</sup>,
             </span>
                         <span class="author-block">
-              <a target="_blank" href="https://www.linkedin.com/in/johannes-meier-52a159b4/">Johannes Meier</a><sup>1,2,3</sup>&nbsp;&nbsp;&nbsp;</span>
+              <a target="_blank" href="https://www.linkedin.com/in/johannes-meier-52a159b4/">Johannes Meier</a><sup>1,3</sup>,
+            </span>
                         <span class="author-block">
-              <a target="_blank" href="https://jacqueskaiser.com/">Jacques Kaiser</a><sup>2</sup>&nbsp;&nbsp;&nbsp;
+              <a target="_blank" href="https://zuriabauer.com/">Zuria Bauer</a><sup>2</sup>,
+            </span>
+                        <span class="author-block">
+              <a target="_blank" href="https://cvg.ethz.ch/team/Prof-Dr-Marc-Pollefeys">Marc Pollefeys</a><sup>2,4</sup>,
+            </span>
+                        <span class="author-block">
+              <a target="_blank" href="https://cvg.cit.tum.de/members/cremers">Daniel Cremers</a><sup>1,3</sup>
+            </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup> TUM</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="author-block"><sup>2</sup> ETH Zurich</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="author-block"><sup>3</sup> MCML</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="author-block"><sup>4</sup> Microsoft</span>
+                    </div>
+                    
+                    <div class="column has-text-centered">
+                        <div class="is-size-5 publication-authors">
+                           <span class="author-block">
+                              <b>IJCV 2026, to appear</b>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <span class="link-block">
+                <a href="https://link.springer.com/article/10.1007/s11263-026-02915-y"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper | Springer</span>
+                </a>
+              </span>
+                            <span class="link-block">
+                <a href="https://github.com/Jchao-Xie/CoProU/tree/main"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Visual odometry (VO) is fundamental to autonomous navigation, robotics, and augmented reality. While self-supervised learning has eliminated the need for expensive ground-truth labels in monocular VO, dynamic objects and occlusions that violate the static scene assumption lead to erroneous pose estimates. Existing uncertainty-based methods filter unreliable regions but rely solely on single-frame information, neglecting temporal consistency across consecutive frames.
+We present Combined Projected Uncertainty (CoProU), a principled probabilistic formulation that propagates and fuses uncertainties across temporal frames. Our key insight is that robust uncertainty estimation requires combining target frame uncertainty with projected uncertainty from reference frames, enabling effective identification of dynamic regions and temporal inconsistencies.
+We demonstrate CoProU's versatility through two complementary frameworks. CoProU-VO-2F employs a decoupled architecture with CNN-based pose encoder and vision transformer-based depth encoder for two-frame visual odometry. CoProU-VO-MF extends our approach to multi-frame scenarios using a unified transformer architecture with coupled encoders that produce shared representations for ego-motion and geometry estimation. This demonstrates that CoProU, though originally formulated for frame pairs, generalizes naturally to multi-frame settings through pairwise application.
+Comprehensive experiments validate our contributions. CoProU-VO-2F achieves substantial improvements over state-of-the-art two-frame methods, reducing ATE by up to 63% on KITTI and 33% on nuScenes. CoProU-VO-MF achieves 45% lower average ATE across KITTI, nuScenes, and Waymo compared to the large-scale pretrained VGGT baseline. Extensive ablation studies confirm the effectiveness of temporal uncertainty propagation and CoProU's adaptability across different architectural paradigms.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered has-text-centered">
+                <div class="column">
+                    <h2 class="title is-3 has-text-left">3D Reconstruction Result</h2>
+                    <img src="static/images/reconstruction_3d.png" alt="3D Reconstruction Result" style="width: 80%; height: auto;">
+                    <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
+                        Our approach enables high-quality multi-frame 3D reconstruction by accurately filtering dynamic objects and effectively leveraging geometric consistency across frames.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="bibtex-ijcv">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code id="bibtex_txt_ijcv">@article{xie2026combining,
+  title     = {Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame},
+  author    = {Xie, Jingchao and Dhaouadi, Oussema and Chen, Weirong and Meier, Johannes and Bauer, Zuria and Pollefeys, Marc and Cremers, Daniel},
+  journal   = {International Journal of Computer Vision},
+  volume    = {134},
+  number    = {7},
+  pages     = {330},
+  year      = {2026},
+  month     = {Jun},
+  day       = {30},
+  issn      = {1573-1405},
+  doi       = {10.1007/s11263-026-02915-y},
+  url       = {https://doi.org/10.1007/s11263-026-02915-y}
+}</code></pre>
+    </div>
+</section>
+</div>
+
+<!-- ========================================== -->
+<!-- GCPR 2025 VERSION                          -->
+<!-- ========================================== -->
+<div id="content-gcpr" style="display: none;">
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h2 class="title is-3 publication-title">CoProU-VO: Combining Projected Uncertainty for End-to-End
+                        Unsupervised Monocular Visual Odometry</h2>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+              <a target="_blank"
+                 href="https://www.linkedin.com/in/jingchao-xie-16b724297/">Jingchao Xie</a><sup>*,1,3</sup>,
+            </span>
+                        <span class="author-block">
+              <a target="_blank"
+                 href="https://ussaema.github.io/">Oussema Dhaouadi</a><sup>*,1,2,3</sup>,
+            </span>
+                        <span class="author-block">
+              <a target="_blank" href="https://wrchen530.github.io/">Weirong Chen</a><sup>1,3</sup>,
+            </span>
+                        <span class="author-block">
+              <a target="_blank" href="https://www.linkedin.com/in/johannes-meier-52a159b4/">Johannes Meier</a><sup>1,3</sup>,</span>
+                        <span class="author-block">
+              <a target="_blank" href="https://jacqueskaiser.com/">Jacques Kaiser</a><sup>2</sup>,
             </span>
                         <span class="author-block">
               <a target="_blank" href="https://cvg.cit.tum.de/members/cremers">Daniel Cremers</a><sup>1,3</sup>
@@ -71,26 +237,13 @@
                     <div class="column has-text-centered">
                         <div class="is-size-5 publication-authors">
                            <span class="author-block">
-                              <b>
-                                GCPR 2025 <span style="color:#ff2600">(Oral · Best Paper Award)</span><br>
-                                IJCV 2026, to appear
-                              </b>
+                              <b>GCPR 2025 <span style="color:#ff2600">(Oral · Best Paper Award)</span></b>
                             </span>
                         </div>
                     </div>
 
                     <div class="column has-text-centered">
                         <div class="publication-links">
-                            <!-- PDF Link. -->
-                            <span class="link-block">
-                <!-- <a href="https://arxiv.org/pdf/2508.00568"
-                   class="external-link button is-normal is-rounded is-dark" target="_blank">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a> -->
-              </span>
                             <span class="link-block">
                 <a href="https://arxiv.org/abs/2508.00568"
                    class="external-link button is-normal is-rounded is-dark" target="_blank">
@@ -101,20 +254,14 @@
                 </a>
               </span>
                             <span class="link-block">
-                  <a href="https://github.com/Jchao-Xie/CoProU"
+                  <a href="https://github.com/Jchao-Xie/CoProU/tree/gcpr-2025"
                      class="external-link button is-normal is-rounded is-dark" target="_blank">
                     <span class="icon">
-                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
-                           data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
-                           viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor"
-                                                                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
-                        <!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                      <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
                   </a>
                 </span>
-
-                             <!-- Poster Link. -->
                                <span class="link-block">
                 <a href="./static/Poster_CoProU.pdf" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
@@ -124,9 +271,7 @@
                   <span>Poster</span>
                 </a>
               </span>
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -493,6 +638,8 @@
     };
 </script>
 
+</div>
+
 <footer class="footer">
     <div class="container">
         <div class="columns is-centered">
@@ -531,5 +678,22 @@
 </script>
 
 
+
+<script>
+function showVersion(version) {
+    if (version === 'ijcv') {
+        document.getElementById('tab-ijcv').classList.add('is-active');
+        document.getElementById('tab-gcpr').classList.remove('is-active');
+        document.getElementById('content-ijcv').style.display = 'block';
+        document.getElementById('content-gcpr').style.display = 'none';
+    } else {
+        document.getElementById('tab-gcpr').classList.add('is-active');
+        document.getElementById('tab-ijcv').classList.remove('is-active');
+        document.getElementById('content-gcpr').style.display = 'block';
+        document.getElementById('content-ijcv').style.display = 'none';
+    }
+}
+</script>
 </body>
+
 </html>
