@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="description"
-          content="CoProU-VO: Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry.">
+        content="CoProU-VO: Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry.">
     <meta name="keywords"
-          content="Visual Odometry, Unsupervised Learning, Uncertainty Estimation, Dynamic Scenarios, Relative Pose Estimation">
+        content="Visual Odometry, Unsupervised Learning, Uncertainty Estimation, Dynamic Scenarios, Relative Pose Estimation">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CoProU-VO: Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
     <link rel="stylesheet" href="./static/css/bulma.min.css">
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
     <link rel="icon" href="./static/images/favicon.ico">
 
@@ -28,335 +27,474 @@
     <script src="./static/js/index.js"></script>
 
 </head>
+
 <body>
 
 
-<section class="hero">
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-            <div class="columns is-centered">
-                <div class="column has-text-centered">
-                    <h1 class="title is-1 publication-title">Combined Projected Uncertainty for Visual Odometry</h1>
-                    <div class="tabs is-centered is-toggle is-toggle-rounded is-medium" style="margin-top: 2rem;">
-                        <ul>
-                            <li id="tab-ijcv" class="is-active">
-                                <a onclick="showVersion('ijcv')">
-                                    <span class="icon is-small"><i class="fas fa-book"></i></span>
-                                    <span>IJCV 2026</span>
-                                </a>
-                            </li>
-                            <li id="tab-gcpr">
-                                <a onclick="showVersion('gcpr')">
-                                    <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
-                                    <span>GCPR 2025</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========================================== -->
-<!-- IJCV 2026 VERSION                          -->
-<!-- ========================================== -->
-
-<div id="content-ijcv">
-<section class="hero">
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-            <div class="columns is-centered">
-                <div class="column has-text-centered">
-                    <h2 class="title is-3 publication-title">Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame</h2>
-                    <div class="is-size-5 publication-authors">
-                        <span class="author-block">
-              <a target="_blank"
-                 href="https://www.linkedin.com/in/jingchao-xie-16b724297/">Jingchao Xie</a><sup>*,1,3</sup>,
-            </span>
-                        <span class="author-block">
-              <a target="_blank"
-                 href="https://ussaema.github.io/">Oussema Dhaouadi</a><sup>*,1,2,3</sup>,
-            </span>
-                        <span class="author-block">
-              <a target="_blank" href="https://wrchen530.github.io/">Weirong Chen</a><sup>1,3</sup>,
-            </span>
-                        <span class="author-block">
-              <a target="_blank" href="https://www.linkedin.com/in/johannes-meier-52a159b4/">Johannes Meier</a><sup>1,3</sup>,
-            </span>
-                        <span class="author-block">
-              <a target="_blank" href="https://zuriabauer.com/">Zuria Bauer</a><sup>2</sup>,
-            </span>
-                        <span class="author-block">
-              <a target="_blank" href="https://cvg.ethz.ch/team/Prof-Dr-Marc-Pollefeys">Marc Pollefeys</a><sup>2,4</sup>,
-            </span>
-                        <span class="author-block">
-              <a target="_blank" href="https://cvg.cit.tum.de/members/cremers">Daniel Cremers</a><sup>1,3</sup>
-            </span>
-                    </div>
-
-                    <div class="is-size-5 publication-authors">
-                        <span class="author-block"><sup>1</sup> TUM</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="author-block"><sup>2</sup> ETH Zurich</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="author-block"><sup>3</sup> MCML</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="author-block"><sup>4</sup> Microsoft</span>
-                        <div class="is-size-6 publication-authors">
-                            <span class="author-block">* shared first authorship</span>
-                        </div>
-                    </div>
-                    
-                    <div class="column has-text-centered">
-                        <div class="is-size-5 publication-authors">
-                           <span class="author-block">
-                              <b>International Journal of Computer Vision (IJCV) 2026</b>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="column has-text-centered">
-                        <div class="publication-links">
-                            <span class="link-block">
-                <a href="https://link.springer.com/article/10.1007/s11263-026-02915-y"
-                   class="external-link button is-normal is-rounded is-dark" target="_blank">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-                            <span class="link-block">
-                <a href="https://github.com/Jchao-Xie/CoProU/tree/main"
-                   class="external-link button is-normal is-rounded is-dark" target="_blank">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="hero teaser">
-    <div class="container">
+    <section class="hero">
         <div class="hero-body">
-            <center><img src="./static/images/teaser.png" alt="Teaser Image" class="teaser-image"
-                         style="width: 100%; max-width: 1200px;"></center>
-            <h2 class="subtitle has-text-centered">
-                We propose <span class="method">CoProU-VO</span>, an unsupervised visual odometry method that improves
-                pose estimation in dynamic scenes by propagating and combining uncertainty across consecutive frames.
-            </h2>
-        </div>
-    </div>
-</section>
-
-<section class="section hero is-light">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">Abstract</h2>
-                <div class="content has-text-justified">
-                    <p>
-                        Visual odometry (VO) is fundamental to autonomous navigation, robotics, and augmented reality. While self-supervised learning has eliminated the need for expensive ground-truth labels in monocular VO, dynamic objects and occlusions that violate the static scene assumption lead to erroneous pose estimates. Existing uncertainty-based methods filter unreliable regions but rely solely on single-frame information, neglecting temporal consistency across consecutive frames.
-We present Combined Projected Uncertainty (CoProU), a principled probabilistic formulation that propagates and fuses uncertainties across temporal frames. Our key insight is that robust uncertainty estimation requires combining target frame uncertainty with projected uncertainty from reference frames, enabling effective identification of dynamic regions and temporal inconsistencies.
-We demonstrate CoProU's versatility through two complementary frameworks. CoProU-VO-2F employs a decoupled architecture with CNN-based pose encoder and vision transformer-based depth encoder for two-frame visual odometry. CoProU-VO-MF extends our approach to multi-frame scenarios using a unified transformer architecture with coupled encoders that produce shared representations for ego-motion and geometry estimation. This demonstrates that CoProU, though originally formulated for frame pairs, generalizes naturally to multi-frame settings through pairwise application.
-Comprehensive experiments validate our contributions. CoProU-VO-2F achieves substantial improvements over state-of-the-art two-frame methods, reducing ATE by up to 63% on KITTI and 33% on nuScenes. CoProU-VO-MF achieves 45% lower average ATE across KITTI, nuScenes, and Waymo compared to the large-scale pretrained VGGT baseline. Extensive ablation studies confirm the effectiveness of temporal uncertainty propagation and CoProU's adaptability across different architectural paradigms.
-                    </p>
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">Combined Projected Uncertainty for Visual Odometry</h1>
+                        <div class="tabs is-centered is-toggle is-toggle-rounded is-medium" style="margin-top: 2rem;">
+                            <ul>
+                                <li id="tab-ijcv" class="is-active">
+                                    <a onclick="showVersion('ijcv')">
+                                        <span class="icon is-small"><i class="fas fa-book"></i></span>
+                                        <span>IJCV 2026</span>
+                                    </a>
+                                </li>
+                                <li id="tab-gcpr">
+                                    <a onclick="showVersion('gcpr')">
+                                        <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
+                                        <span>GCPR 2025</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- ========================================== -->
+    <!-- IJCV 2026 VERSION                          -->
+    <!-- ========================================== -->
 
+    <div id="content-ijcv">
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                        <div class="column has-text-centered">
+                            <h2 class="title is-3 publication-title">Combining Projected Uncertainty for Self-Supervised
+                                Visual Odometry: From Two-Frame to Multi-Frame</h2>
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block">
+                                    <a target="_blank"
+                                        href="https://www.linkedin.com/in/jingchao-xie-16b724297/">Jingchao
+                                        Xie</a><sup>*,1,3</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a target="_blank" href="https://ussaema.github.io/">Oussema
+                                        Dhaouadi</a><sup>*,1,2,3</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a target="_blank" href="https://wrchen530.github.io/">Weirong
+                                        Chen</a><sup>1,3</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a target="_blank"
+                                        href="https://www.linkedin.com/in/johannes-meier-52a159b4/">Johannes
+                                        Meier</a><sup>1,3</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a target="_blank" href="https://zuriabauer.com/">Zuria Bauer</a><sup>2</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a target="_blank" href="https://cvg.ethz.ch/team/Prof-Dr-Marc-Pollefeys">Marc
+                                        Pollefeys</a><sup>2,4</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a target="_blank" href="https://cvg.cit.tum.de/members/cremers">Daniel
+                                        Cremers</a><sup>1,3</sup>
+                                </span>
+                            </div>
 
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block"><sup>1</sup> TUM</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="author-block"><sup>2</sup> ETH Zurich</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="author-block"><sup>3</sup> MCML</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="author-block"><sup>4</sup> Microsoft</span>
+                                <div class="is-size-6 publication-authors">
+                                    <span class="author-block">* shared first authorship</span>
+                                </div>
+                            </div>
 
-<section class="hero is-small">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered has-text-centered">
-                <div class="column">
-                    <h2 class="title is-3 has-text-left">Architecture Overviews</h2>
-                    
-                    <h3 class="title is-4 has-text-left">CoProU-VO-2F (Baseline Two-Frame Architecture)</h3>
-                    <img src="static/images/architecture_coprou_vo_2f.png" alt="CoProU-VO-2F Architecture" style="width: 80%; height: auto;">
-                    <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
-                        The original two-frame decoupled architecture (presented in our GCPR 2025 work) employs a CNN-based pose encoder alongside a Vision Transformer-based depth encoder.
-                    </p>
+                            <div class="column has-text-centered">
+                                <div class="is-size-5 publication-authors">
+                                    <span class="author-block">
+                                        <b>International Journal of Computer Vision (IJCV) 2026</b>
+                                    </span>
+                                </div>
+                            </div>
 
-                    <br><br>
-                    <h3 class="title is-4 has-text-left">CoProU-VO-MF (New Multi-Frame Architecture)</h3>
-                    <img src="static/images/architecture_coprou_vo_mf.png" alt="CoProU-VO-MF Architecture" style="width: 80%; height: auto;">
-                    <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
-                        Our extended multi-frame framework utilizes a unified transformer architecture with coupled encoders, producing shared representations for both ego-motion and geometry estimation, allowing uncertainty to be propagated seamlessly across multiple frames.
-                    </p>
+                            <div class="column has-text-centered">
+                                <div class="publication-links">
+                                    <span class="link-block">
+                                        <a href="https://link.springer.com/article/10.1007/s11263-026-02915-y"
+                                            class="external-link button is-normal is-rounded is-dark" target="_blank">
+                                            <span class="icon">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </span>
+                                            <span>Paper</span>
+                                        </a>
+                                    </span>
+                                    <span class="link-block">
+                                        <a href="https://github.com/Jchao-Xie/CoProU/tree/main"
+                                            class="external-link button is-normal is-rounded is-dark" target="_blank">
+                                            <span class="icon">
+                                                <i class="fab fa-github"></i>
+                                            </span>
+                                            <span>Code</span>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-full">
-                <h2 class="title is-3 has-text-left">Multi-Frame Visual Odometry Results</h2>
-                <div class="content has-text-justified">
-                    <p>
-                        We evaluate our coupled multi-frame formulation (CoProU-VO-MF) against our decoupled two-frame baseline (CoProU-VO-2F) and the large-scale pretrained VGGT model. Our method achieves state-of-the-art results purely through self-supervised training without any ground truth.
-                    </p>
-                </div>
-                <p style="font-size: 0.9em; margin-bottom: 1rem;">Best results are in <b>bold</b>, second best are <u>underlined</u>. Click on column headers to sort.</p>
-                <div class="table-container">
-                    <table id="resultsTable" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="font-size: 0.9em; margin: 0 auto;">
-                        <thead>
-                            <tr>
-                                <th rowspan="2" style="vertical-align: middle;">Method</th>
-                                <th rowspan="2" style="vertical-align: middle;">Trainable</th>
-                                <th colspan="3" class="has-text-centered">Training</th>
-                                <th colspan="3" class="has-text-centered">KITTI</th>
-                                <th colspan="3" class="has-text-centered">nuScenes</th>
-                                <th colspan="3" class="has-text-centered">Waymo</th>
-                                <th rowspan="2" style="vertical-align: middle;" class="has-text-centered">Avg. ATE</th>
-                            </tr>
-                            <tr>
-                                <th>K</th><th>N</th><th>W</th>
-                                <th>ATE &darr;</th><th>t<sub>err</sub> &darr;</th><th>r<sub>err</sub> &darr;</th>
-                                <th>ATE &darr;</th><th>RPE<sub>trans</sub> &darr;</th><th>RPE<sub>rot</sub> &darr;</th>
-                                <th>ATE &darr;</th><th>RPE<sub>trans</sub> &darr;</th><th>RPE<sub>rot</sub> &darr;</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>VGGT</td><td>--</td><td></td><td></td><td></td>
-                                <td>48.99</td><td>18.28</td><td>2.51</td>
-                                <td>2.498</td><td>0.094</td><td>0.054</td>
-                                <td><span style="color:red">1.606</span></td><td><span style="color:red">0.064</span></td><td><span style="color:red">0.057</span></td>
-                                <td>17.70</td>
-                            </tr>
-                            <tr>
-                                <td>VGGT*</td><td>D</td><td>✓</td><td>✓</td><td>✓</td>
-                                <td>41.87</td><td>17.15</td><td>2.65</td>
-                                <td>2.126</td><td>0.078</td><td>0.055</td>
-                                <td><span style="color:red">1.484</span></td><td><span style="color:red">0.063</span></td><td><span style="color:red">0.057</span></td>
-                                <td>15.16</td>
-                            </tr>
-                            <tr>
-                                <td>CoProU-VO-2F</td><td>D</td><td>✓</td><td></td><td></td>
-                                <td><u>30.40</u></td><td><u>10.65</u></td><td><b>2.37</b></td>
-                                <td>3.548</td><td>0.169</td><td>0.204</td>
-                                <td>6.842</td><td>0.321</td><td>0.297</td>
-                                <td>13.60</td>
-                            </tr>
-                            <tr>
-                                <td>CoProU-VO-2F</td><td>D</td><td>✓</td><td></td><td>✓</td>
-                                <td>70.11</td><td>20.38</td><td>6.13</td>
-                                <td>0.859</td><td>0.031</td><td>0.085</td>
-                                <td>0.960</td><td>0.046</td><td>0.057</td>
-                                <td>23.98</td>
-                            </tr>
-                            <tr>
-                                <td>CoProU-VO-2F</td><td>D</td><td>✓</td><td>✓</td><td>✓</td>
-                                <td>59.20</td><td>16.59</td><td>5.01</td>
-                                <td><b>0.489</b></td><td><b>0.024</b></td><td><u>0.054</u></td>
-                                <td><u>0.909</u></td><td><u>0.046</u></td><td><u>0.056</u></td>
-                                <td>20.20</td>
-                            </tr>
-                            <tr>
-                                <td>CoProU-VO-MF</td><td>E+D</td><td>✓</td><td></td><td></td>
-                                <td>35.91</td><td>12.19</td><td>3.78</td>
-                                <td>2.012</td><td>0.091</td><td>0.123</td>
-                                <td>3.150</td><td>0.146</td><td>0.166</td>
-                                <td>13.69</td>
-                            </tr>
-                            <tr>
-                                <td>CoProU-VO-MF</td><td>E+D</td><td>✓</td><td></td><td>✓</td>
-                                <td>36.89</td><td>11.28</td><td>3.35</td>
-                                <td>1.044</td><td>0.039</td><td><u>0.079</u></td>
-                                <td>0.896</td><td>0.037</td><td>0.041</td>
-                                <td><u>12.94</u></td>
-                            </tr>
-                            <tr>
-                                <td>CoProU-VO-MF</td><td>E+D</td><td>✓</td><td>✓</td><td>✓</td>
-                                <td><b>27.97</b></td><td><b>9.49</b></td><td><u>2.94</u></td>
-                                <td><u>0.557</u></td><td><u>0.025</u></td><td><b>0.044</b></td>
-                                <td><b>0.830</b></td><td><b>0.036</b></td><td><b>0.040</b></td>
-                                <td><b>9.79</b></td>
-                            </tr>
-                        </tbody>
-                    </table>
+        </section>
+        <section class="hero teaser">
+            <div class="container">
+                <div class="hero-body">
+                    <center><img src="./static/images/teaser.png" alt="Teaser Image" class="teaser-image"
+                            style="width: 100%; max-width: 1200px;"></center>
+                    <h2 class="subtitle has-text-centered">
+                        We propose <span class="method">CoProU-VO</span>, an unsupervised visual odometry method that
+                        improves
+                        pose estimation in dynamic scenes by propagating and combining uncertainty across consecutive
+                        frames.
+                    </h2>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-
-
-
-<!-- Reordered Sections -->
-
-<section class="hero is-small">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered has-text-centered">
-                <div class="column">
-                    <h2 class="title is-3 has-text-left">Inference Results</h2>
-                    <video id="inference" autoplay controls muted loop playsinline style="width: 80%; height: auto;">
-                        <source src="static/videos/inference.mp4" type="video/mp4">
-                    </video>
-                    <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
-                        Our inference outputs include RGB, Depth, Disparity, and uncertainty estimations produced natively by the CoProU-VO-MF architecture.
-                    </p>
+        <section class="section hero is-light">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">Abstract</h2>
+                        <div class="content has-text-justified">
+                            <p>
+                                Visual odometry (VO) is fundamental to autonomous navigation, robotics, and augmented
+                                reality. While self-supervised learning has eliminated the need for expensive
+                                ground-truth labels in monocular VO, dynamic objects and occlusions that violate the
+                                static scene assumption lead to erroneous pose estimates. Existing uncertainty-based
+                                methods filter unreliable regions but rely solely on single-frame information,
+                                neglecting temporal consistency across consecutive frames.
+                                We present Combined Projected Uncertainty (CoProU), a principled probabilistic
+                                formulation that propagates and fuses uncertainties across temporal frames. Our key
+                                insight is that robust uncertainty estimation requires combining target frame
+                                uncertainty with projected uncertainty from reference frames, enabling effective
+                                identification of dynamic regions and temporal inconsistencies.
+                                We demonstrate CoProU's versatility through two complementary frameworks. CoProU-VO-2F
+                                employs a decoupled architecture with CNN-based pose encoder and vision
+                                transformer-based depth encoder for two-frame visual odometry. CoProU-VO-MF extends our
+                                approach to multi-frame scenarios using a unified transformer architecture with coupled
+                                encoders that produce shared representations for ego-motion and geometry estimation.
+                                This demonstrates that CoProU, though originally formulated for frame pairs, generalizes
+                                naturally to multi-frame settings through pairwise application.
+                                Comprehensive experiments validate our contributions. CoProU-VO-2F achieves substantial
+                                improvements over state-of-the-art two-frame methods, reducing ATE by up to 63% on KITTI
+                                and 33% on nuScenes. CoProU-VO-MF achieves 45% lower average ATE across KITTI, nuScenes,
+                                and Waymo compared to the large-scale pretrained VGGT baseline. Extensive ablation
+                                studies confirm the effectiveness of temporal uncertainty propagation and CoProU's
+                                adaptability across different architectural paradigms.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<section class="hero is-small">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered has-text-centered">
-                <div class="column">
-                    <h2 class="title is-3 has-text-left">VO qualitative results</h2>
-                    <img src="static/images/trajectories_mf.png" alt="Trajectories" style="width: 80%; height: auto;">
-                    <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
-                        Our multi-frame approach yields robust global trajectories even in challenging dynamic environments where the baseline two-frame method exhibits drift.
-                    </p>
+
+
+
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column">
+                            <h2 class="title is-3 has-text-left">Architecture Overviews</h2>
+
+                            <h3 class="title is-4 has-text-left">CoProU-VO-2F (Baseline Two-Frame Architecture)</h3>
+                            <img src="static/images/architecture_coprou_vo_2f.png" alt="CoProU-VO-2F Architecture"
+                                style="width: 80%; height: auto;">
+                            <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
+                                The original two-frame decoupled architecture (presented in our GCPR 2025 work) employs
+                                a CNN-based pose encoder alongside a Vision Transformer-based depth encoder.
+                            </p>
+
+                            <br><br>
+                            <h3 class="title is-4 has-text-left">CoProU-VO-MF (New Multi-Frame Architecture)</h3>
+                            <img src="static/images/architecture_coprou_vo_mf.png" alt="CoProU-VO-MF Architecture"
+                                style="width: 80%; height: auto;">
+                            <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
+                                Our extended multi-frame framework utilizes a unified transformer architecture with
+                                coupled encoders, producing shared representations for both ego-motion and geometry
+                                estimation, allowing uncertainty to be propagated seamlessly across multiple frames.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="hero is-small">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered has-text-centered">
-                <div class="column">
-                    <h2 class="title is-3 has-text-left">3D reconstruction results</h2>
-                    <img src="static/images/reconstruction_3d.png" alt="3D reconstruction results" style="width: 80%; height: auto;">
-                    <br><br>
-                    <video id="reconstruction" autoplay controls muted loop playsinline style="width: 80%; height: auto;">
-                        <source src="static/videos/reconstruction.mp4" type="video/mp4">
-                    </video>
-                    <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
-                        Our approach enables high-quality multi-frame 3D reconstruction by accurately filtering dynamic objects and effectively leveraging geometric consistency across frames. The sequence demonstrates the point cloud alongside camera poses learned entirely in a self-supervised fashion.
-                    </p>
+        </section>
+
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-full">
+                        <h2 class="title is-3 has-text-left">Multi-Frame Visual Odometry Results</h2>
+                        <div class="content has-text-justified">
+                            <p>
+                                We evaluate our coupled multi-frame formulation (CoProU-VO-MF) against our decoupled
+                                two-frame baseline (CoProU-VO-2F) and the large-scale pretrained VGGT model. Our method
+                                achieves state-of-the-art results purely through self-supervised training without any
+                                ground truth.
+                            </p>
+                        </div>
+                        <p style="font-size: 0.9em; margin-bottom: 1rem;">Best results are in <b>bold</b>, second best
+                            are <u>underlined</u>. Click on column headers to sort.</p>
+                        <div class="table-container">
+                            <table id="resultsTable"
+                                class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"
+                                style="font-size: 0.9em; margin: 0 auto;">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" style="vertical-align: middle;">Method</th>
+                                        <th rowspan="2" style="vertical-align: middle;">Trainable</th>
+                                        <th colspan="3" class="has-text-centered">Training</th>
+                                        <th colspan="3" class="has-text-centered">KITTI</th>
+                                        <th colspan="3" class="has-text-centered">nuScenes</th>
+                                        <th colspan="3" class="has-text-centered">Waymo</th>
+                                        <th rowspan="2" style="vertical-align: middle;" class="has-text-centered">Avg.
+                                            ATE</th>
+                                    </tr>
+                                    <tr>
+                                        <th>K</th>
+                                        <th>N</th>
+                                        <th>W</th>
+                                        <th>ATE &darr;</th>
+                                        <th>t<sub>err</sub> &darr;</th>
+                                        <th>r<sub>err</sub> &darr;</th>
+                                        <th>ATE &darr;</th>
+                                        <th>RPE<sub>trans</sub> &darr;</th>
+                                        <th>RPE<sub>rot</sub> &darr;</th>
+                                        <th>ATE &darr;</th>
+                                        <th>RPE<sub>trans</sub> &darr;</th>
+                                        <th>RPE<sub>rot</sub> &darr;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>VGGT</td>
+                                        <td>--</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>48.99</td>
+                                        <td>18.28</td>
+                                        <td>2.51</td>
+                                        <td>2.498</td>
+                                        <td>0.094</td>
+                                        <td>0.054</td>
+                                        <td><span style="color:red">1.606</span></td>
+                                        <td><span style="color:red">0.064</span></td>
+                                        <td><span style="color:red">0.057</span></td>
+                                        <td>17.70</td>
+                                    </tr>
+                                    <tr>
+                                        <td>VGGT*</td>
+                                        <td>D</td>
+                                        <td>✓</td>
+                                        <td>✓</td>
+                                        <td>✓</td>
+                                        <td>41.87</td>
+                                        <td>17.15</td>
+                                        <td>2.65</td>
+                                        <td>2.126</td>
+                                        <td>0.078</td>
+                                        <td>0.055</td>
+                                        <td><span style="color:red">1.484</span></td>
+                                        <td><span style="color:red">0.063</span></td>
+                                        <td><span style="color:red">0.057</span></td>
+                                        <td>15.16</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CoProU-VO-2F</td>
+                                        <td>D</td>
+                                        <td>✓</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><u>30.40</u></td>
+                                        <td><u>10.65</u></td>
+                                        <td><b>2.37</b></td>
+                                        <td>3.548</td>
+                                        <td>0.169</td>
+                                        <td>0.204</td>
+                                        <td>6.842</td>
+                                        <td>0.321</td>
+                                        <td>0.297</td>
+                                        <td>13.60</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CoProU-VO-2F</td>
+                                        <td>D</td>
+                                        <td>✓</td>
+                                        <td></td>
+                                        <td>✓</td>
+                                        <td>70.11</td>
+                                        <td>20.38</td>
+                                        <td>6.13</td>
+                                        <td>0.859</td>
+                                        <td>0.031</td>
+                                        <td>0.085</td>
+                                        <td>0.960</td>
+                                        <td>0.046</td>
+                                        <td>0.057</td>
+                                        <td>23.98</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CoProU-VO-2F</td>
+                                        <td>D</td>
+                                        <td>✓</td>
+                                        <td>✓</td>
+                                        <td>✓</td>
+                                        <td>59.20</td>
+                                        <td>16.59</td>
+                                        <td>5.01</td>
+                                        <td><b>0.489</b></td>
+                                        <td><b>0.024</b></td>
+                                        <td><u>0.054</u></td>
+                                        <td><u>0.909</u></td>
+                                        <td><u>0.046</u></td>
+                                        <td><u>0.056</u></td>
+                                        <td>20.20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CoProU-VO-MF</td>
+                                        <td>E+D</td>
+                                        <td>✓</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>35.91</td>
+                                        <td>12.19</td>
+                                        <td>3.78</td>
+                                        <td>2.012</td>
+                                        <td>0.091</td>
+                                        <td>0.123</td>
+                                        <td>3.150</td>
+                                        <td>0.146</td>
+                                        <td>0.166</td>
+                                        <td>13.69</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CoProU-VO-MF</td>
+                                        <td>E+D</td>
+                                        <td>✓</td>
+                                        <td></td>
+                                        <td>✓</td>
+                                        <td>36.89</td>
+                                        <td>11.28</td>
+                                        <td>3.35</td>
+                                        <td>1.044</td>
+                                        <td>0.039</td>
+                                        <td><u>0.079</u></td>
+                                        <td>0.896</td>
+                                        <td>0.037</td>
+                                        <td>0.041</td>
+                                        <td><u>12.94</u></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CoProU-VO-MF</td>
+                                        <td>E+D</td>
+                                        <td>✓</td>
+                                        <td>✓</td>
+                                        <td>✓</td>
+                                        <td><b>27.97</b></td>
+                                        <td><b>9.49</b></td>
+                                        <td><u>2.94</u></td>
+                                        <td><u>0.557</u></td>
+                                        <td><u>0.025</u></td>
+                                        <td><b>0.044</b></td>
+                                        <td><b>0.830</b></td>
+                                        <td><b>0.036</b></td>
+                                        <td><b>0.040</b></td>
+                                        <td><b>9.79</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="section" id="bibtex-ijcv">
+        </section>
 
-    <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <pre><code id="bibtex_txt_ijcv">@article{xie2026combining,
+
+
+
+        <!-- Reordered Sections -->
+
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column">
+                            <h2 class="title is-3 has-text-left">Inference Results</h2>
+                            <video id="inference" autoplay controls muted loop playsinline
+                                style="width: 80%; height: auto;">
+                                <source src="static/videos/inference.mp4" type="video/mp4">
+                            </video>
+                            <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
+                                Our inference outputs include RGB, Depth, Disparity, and uncertainty estimations
+                                produced natively by the CoProU-VO-MF architecture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column">
+                            <h2 class="title is-3 has-text-left">VO qualitative results</h2>
+                            <img src="static/images/trajectories_mf.png" alt="Trajectories"
+                                style="width: 80%; height: auto;">
+                            <p class="content has-text-justified" style="width: 60%; margin: 0 auto; margin-top: 1rem;">
+                                Our multi-frame approach yields robust global trajectories even in challenging dynamic
+                                environments where the baseline two-frame method exhibits drift.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column">
+                            <h2 class="title is-3 has-text-left">3D reconstruction results</h2>
+                            <img src="static/images/reconstruction_3d.png" alt="3D reconstruction results"
+                                style="width: 80%; height: auto;">
+                            <br><br>
+                            <video id="reconstruction" autoplay controls muted loop playsinline
+                                style="width: 80%; height: auto;">
+                                <source src="static/videos/reconstruction.mp4" type="video/mp4">
+                            </video>
+                            <p class="content has-text-justified" style="width: 80%; margin: 0 auto; margin-top: 1rem;">
+                                Our approach enables high-quality multi-frame 3D reconstruction by accurately filtering
+                                dynamic objects and effectively leveraging geometric consistency across frames. The
+                                sequence demonstrates the point cloud alongside camera poses learned entirely in a
+                                self-supervised fashion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="bibtex-ijcv">
+
+            <div class="container is-max-desktop content">
+                <h2 class="title">BibTeX</h2>
+                <pre><code id="bibtex_txt_ijcv">@article{xie2026combining,
   title     = {Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame},
   author    = {Xie, Jingchao and Dhaouadi, Oussema and Chen, Weirong and Meier, Johannes and Bauer, Zuria and Pollefeys, Marc and Cremers, Daniel},
   journal   = {International Journal of Computer Vision},
@@ -370,564 +508,606 @@ Comprehensive experiments validate our contributions. CoProU-VO-2F achieves subs
   doi       = {10.1007/s11263-026-02915-y},
   url       = {https://doi.org/10.1007/s11263-026-02915-y}
 }</code></pre>
+            </div>
+        </section>
     </div>
-</section>
-</div>
 
-<!-- ========================================== -->
-<!-- GCPR 2025 VERSION                          -->
-<!-- ========================================== -->
-<div id="content-gcpr" style="display: none;">
-<section class="hero">
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-            <div class="columns is-centered">
-                <div class="column has-text-centered">
-                    <h2 class="title is-3 publication-title">CoProU-VO: Combining Projected Uncertainty for End-to-End
-                        Unsupervised Monocular Visual Odometry</h2>
-                    <div class="is-size-5 publication-authors">
-                        <span class="author-block">
-              <a target="_blank"
-                 href="https://www.linkedin.com/in/jingchao-xie-16b724297/">Jingchao Xie</a><sup>*,1,3</sup>,
-            </span>
-                        <span class="author-block">
-              <a target="_blank"
-                 href="https://ussaema.github.io/">Oussema Dhaouadi</a><sup>*,1,2,3</sup>,
-            </span>
-                        <span class="author-block">
-              <a target="_blank" href="https://wrchen530.github.io/">Weirong Chen</a><sup>1,3</sup>,
-            </span>
-                        <span class="author-block">
-              <a target="_blank" href="https://www.linkedin.com/in/johannes-meier-52a159b4/">Johannes Meier</a><sup>1,3</sup>,</span>
-                        <span class="author-block">
-              <a target="_blank" href="https://jacqueskaiser.com/">Jacques Kaiser</a><sup>2</sup>,
-            </span>
-                        <span class="author-block">
-              <a target="_blank" href="https://cvg.cit.tum.de/members/cremers">Daniel Cremers</a><sup>1,3</sup>
-            </span>
-                    </div>
+    <!-- ========================================== -->
+    <!-- GCPR 2025 VERSION                          -->
+    <!-- ========================================== -->
+    <div id="content-gcpr" style="display: none;">
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                        <div class="column has-text-centered">
+                            <h2 class="title is-3 publication-title">CoProU-VO: Combining Projected Uncertainty for
+                                End-to-End
+                                Unsupervised Monocular Visual Odometry</h2>
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block">
+                                    <a target="_blank"
+                                        href="https://www.linkedin.com/in/jingchao-xie-16b724297/">Jingchao
+                                        Xie</a><sup>*,1,3</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a target="_blank" href="https://ussaema.github.io/">Oussema
+                                        Dhaouadi</a><sup>*,1,2,3</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a target="_blank" href="https://wrchen530.github.io/">Weirong
+                                        Chen</a><sup>1,3</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a target="_blank"
+                                        href="https://www.linkedin.com/in/johannes-meier-52a159b4/">Johannes
+                                        Meier</a><sup>1,3</sup>,</span>
+                                <span class="author-block">
+                                    <a target="_blank" href="https://jacqueskaiser.com/">Jacques Kaiser</a><sup>2</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a target="_blank" href="https://cvg.cit.tum.de/members/cremers">Daniel
+                                        Cremers</a><sup>1,3</sup>
+                                </span>
+                            </div>
 
-                    <div class="is-size-5 publication-authors">
-                        <span class="author-block"><sup>1</sup> TUM</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="author-block"><sup>2</sup> DeepScenario</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="author-block"><sup>3</sup> MCML</span>
-                        <div class="is-size-6 publication-authors">
-                            <span class="author-block">* shared first authorship</span>
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block"><sup>1</sup> TUM</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="author-block"><sup>2</sup> DeepScenario</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="author-block"><sup>3</sup> MCML</span>
+                                <div class="is-size-6 publication-authors">
+                                    <span class="author-block">* shared first authorship</span>
+                                </div>
+                            </div>
+                            <div class="column has-text-centered">
+                                <div class="is-size-5 publication-authors">
+                                    <span class="author-block">
+                                        <b>German Conference on Pattern Recognition (GCPR) 2025</b><br>
+                                        <span style="color:#ff2600"><b>Oral · Best Paper Award</b></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="column has-text-centered">
+                                <div class="publication-links">
+                                    <span class="link-block">
+                                        <a href="https://arxiv.org/abs/2508.00568"
+                                            class="external-link button is-normal is-rounded is-dark" target="_blank">
+                                            <span class="icon">
+                                                <i class="ai ai-arxiv"></i>
+                                            </span>
+                                            <span>arXiv</span>
+                                        </a>
+                                    </span>
+                                    <span class="link-block">
+                                        <a href="https://github.com/Jchao-Xie/CoProU/tree/gcpr-2025"
+                                            class="external-link button is-normal is-rounded is-dark" target="_blank">
+                                            <span class="icon">
+                                                <i class="fab fa-github"></i>
+                                            </span>
+                                            <span>Code</span>
+                                        </a>
+                                    </span>
+                                    <span class="link-block">
+                                        <a href="./static/Poster_CoProU.pdf" target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <img src="./static/images/poster_icon.png" alt="Poster Icon"
+                                                    style="width: 15px;">
+                                            </span>
+                                            <span>Poster</span>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="column has-text-centered">
-                        <div class="is-size-5 publication-authors">
-                           <span class="author-block">
-                              <b>German Conference on Pattern Recognition (GCPR) 2025</b><br>
-                              <span style="color:#ff2600"><b>Oral · Best Paper Award</b></span>
-                            </span>
+                </div>
+            </div>
+        </section>
+        <section class="hero teaser">
+            <div class="container">
+                <div class="hero-body">
+                    <center><img src="./static/images/teaser.png" alt="Teaser Image" class="teaser-image"
+                            style="width: 100%; max-width: 1200px;"></center>
+                    <h2 class="subtitle has-text-centered">
+                        We propose <span class="method">CoProU-VO</span>, an unsupervised visual odometry method that
+                        improves
+                        pose estimation in dynamic scenes by propagating and combining uncertainty across consecutive
+                        frames.
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="section hero is-light">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">Abstract</h2>
+                        <div class="content has-text-justified">
+                            <p>
+                                Visual Odometry (VO) is fundamental to autonomous navigation, robotics, and augmented
+                                reality,
+                                with unsupervised approaches eliminating the need for expensive ground-truth labels.
+                                However,
+                                these methods struggle when dynamic objects violate the static scene assumption, leading
+                                to
+                                erroneous pose estimations. We tackle this problem by uncertainty modeling, which is a
+                                commonly
+                                used technique that creates robust masks to filter out <b>dynamic objects</b> and
+                                <b>occlusions</b> without
+                                requiring explicit motion segmentation. Traditional uncertainty modeling considers only
+                                single-frame information, overlooking the uncertainties across consecutive frames. Our
+                                key
+                                insight is that <b>uncertainty must be propagated and combined across temporal
+                                    frames</b> to
+                                effectively identify unreliable regions, particularly in dynamic scenes. To address this
+                                challenge, we introduce Combined Projected Uncertainty VO (<span
+                                    class="method">CoProU-VO</span>),
+                                a novel end-to-end approach that combines target frame uncertainty with projected
+                                reference
+                                frame uncertainty using a
+                                principled probabilistic formulation. Built upon vision transformer backbones, our model
+                                simultaneously learns <b>depth</b>, <b>uncertainty estimation</b>, and <b>camera
+                                    poses</b>.
+                                Consequently, experiments
+                                on the KITTI and nuScenes datasets demonstrate significant improvements over previous
+                                unsupervised monocular end-to-end two-frame-based methods and exhibit strong performance
+                                in
+                                challenging highway scenes where other approaches often fail. Additionally,
+                                comprehensive
+                                ablation studies validate the effectiveness of cross-frame uncertainty propagation
+                            </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="column has-text-centered">
-                        <div class="publication-links">
-                            <span class="link-block">
-                <a href="https://arxiv.org/abs/2508.00568"
-                   class="external-link button is-normal is-rounded is-dark" target="_blank">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-                            <span class="link-block">
-                  <a href="https://github.com/Jchao-Xie/CoProU/tree/gcpr-2025"
-                     class="external-link button is-normal is-rounded is-dark" target="_blank">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                               <span class="link-block">
-                <a href="./static/Poster_CoProU.pdf" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <img src="./static/images/poster_icon.png" alt="Poster Icon" style="width: 15px;">
-                  </span>
-                  <span>Poster</span>
-                </a>
-              </span>
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column">
+                            <h2 class="title is-3 has-text-left">Contribution</h2>
+                            <img src="static/images/dynamic_mask_comparation.png" alt="Contribution"
+                                style="width: 80%; height: auto;">
+                            <p class="content has-text-justified">
+                                We compare the <b>self-discovered dynamic mask</b> from <b>SC-Depth</b>, the <b>single
+                                    uncertainty</b> approach used in <b>D3VO</b> and <b>KPDepth</b>, and our proposed
+                                <b>CoProU</b>.
+                                The masks are predicted from both target and reference images. Our <b>CoProU</b>
+                                accurately
+                                identifies and masks regions affected by dynamic objects with sharp boundaries. In
+                                contrast, the
+                                <b>single uncertainty</b> and <b>self-discovered masks</b> fail to fully cover dynamic
+                                regions
+                                and incorrectly mask static areas, producing blurry boundaries around object contours.
+                            </p>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="hero teaser">
-    <div class="container">
-        <div class="hero-body">
-            <center><img src="./static/images/teaser.png" alt="Teaser Image" class="teaser-image"
-                         style="width: 100%; max-width: 1200px;"></center>
-            <h2 class="subtitle has-text-centered">
-                We propose <span class="method">CoProU-VO</span>, an unsupervised visual odometry method that improves
-                pose estimation in dynamic scenes by propagating and combining uncertainty across consecutive frames.
-            </h2>
-        </div>
-    </div>
-</section>
+        </section>
 
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column">
+                            <h2 class="title is-3 has-text-left">Method</h2>
+                            <img src="static/images/pipeline.png" alt="Method" style="width: 80%; height: auto;">
+                            <p class="content has-text-justified">
+                                Given two consecutive frames
+                                (target I<sub>t</sub> and reference I<sub>t′</sub> ), (1) features are extracted using a
+                                pre-trained vision transformer backbone, (2) depth maps and uncertainty estimates are
+                                produced
+                                through a
+                                decoder network for both frames, (3) relative camera pose is predicted by a PoseNet
+                                module, (4) projection and warping operations synthesize views between frames, and
+                                (5) our novel <span>CoProU-VO</span> module integrates uncertainty information from both
+                                target
+                                and
+                                reference frames, which is used to (6) compute the uncertainty-aware loss.
+                            </p>
 
-
-
-<section class="section hero is-light">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">Abstract</h2>
-                <div class="content has-text-justified">
-                    <p>
-                        Visual Odometry (VO) is fundamental to autonomous navigation, robotics, and augmented reality,
-                        with unsupervised approaches eliminating the need for expensive ground-truth labels. However,
-                        these methods struggle when dynamic objects violate the static scene assumption, leading to
-                        erroneous pose estimations. We tackle this problem by uncertainty modeling, which is a commonly
-                        used technique that creates robust masks to filter out <b>dynamic objects</b> and
-                        <b>occlusions</b> without
-                        requiring explicit motion segmentation. Traditional uncertainty modeling considers only
-                        single-frame information, overlooking the uncertainties across consecutive frames. Our key
-                        insight is that <b>uncertainty must be propagated and combined across temporal frames</b> to
-                        effectively identify unreliable regions, particularly in dynamic scenes. To address this
-                        challenge, we introduce Combined Projected Uncertainty VO (<span class="method">CoProU-VO</span>),
-                        a novel end-to-end approach that combines target frame uncertainty with projected reference
-                        frame uncertainty using a
-                        principled probabilistic formulation. Built upon vision transformer backbones, our model
-                        simultaneously learns <b>depth</b>, <b>uncertainty estimation</b>, and <b>camera poses</b>.
-                        Consequently, experiments
-                        on the KITTI and nuScenes datasets demonstrate significant improvements over previous
-                        unsupervised monocular end-to-end two-frame-based methods and exhibit strong performance in
-                        challenging highway scenes where other approaches often fail. Additionally, comprehensive
-                        ablation studies validate the effectiveness of cross-frame uncertainty propagation
-                    </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="hero is-small">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered has-text-centered">
-                <div class="column">
-                    <h2 class="title is-3 has-text-left">Contribution</h2>
-                    <img src="static/images/dynamic_mask_comparation.png" alt="Contribution"
-                         style="width: 80%; height: auto;">
-                    <p class="content has-text-justified">
-                        We compare the <b>self-discovered dynamic mask</b> from <b>SC-Depth</b>, the <b>single
-                        uncertainty</b> approach used in <b>D3VO</b> and <b>KPDepth</b>, and our proposed <b>CoProU</b>.
-                        The masks are predicted from both target and reference images. Our <b>CoProU</b> accurately
-                        identifies and masks regions affected by dynamic objects with sharp boundaries. In contrast, the
-                        <b>single uncertainty</b> and <b>self-discovered masks</b> fail to fully cover dynamic regions
-                        and incorrectly mask static areas, producing blurry boundaries around object contours.
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="hero is-small">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered has-text-centered">
-                <div class="column">
-                    <h2 class="title is-3 has-text-left">Method</h2>
-                    <img src="static/images/pipeline.png" alt="Method" style="width: 80%; height: auto;">
-                    <p class="content has-text-justified">
-                        Given two consecutive frames
-                        (target I<sub>t</sub> and reference I<sub>t′</sub> ), (1) features are extracted using a
-                        pre-trained vision transformer backbone, (2) depth maps and uncertainty estimates are produced
-                        through a
-                        decoder network for both frames, (3) relative camera pose is predicted by a PoseNet
-                        module, (4) projection and warping operations synthesize views between frames, and
-                        (5) our novel <span>CoProU-VO</span> module integrates uncertainty information from both target
-                        and
-                        reference frames, which is used to (6) compute the uncertainty-aware loss.
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
 
-<section class="hero is-small">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered has-text-centered">
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-centered has-text-centered">
 
-                <div class="column">
-                    <h2 class="title is-3 has-text-left">Results</h2>
-                    <h2 class="title is-4 has-text-left">Visual Odometry Results</h2>
-                    <img src="static/images/trajectory.png" alt="VO"
-                         style="width: 80%; height: auto;">
-                    <p class="content has-text-justified">
-                        In sequence 01, the hybrid method DF-VO
-                        completely fails, while SC-Depth exhibits larger deviations compared to our
-                        method, which achieves significantly more accurate trajectories. In sequence 09, CoProU-VO
-                        with DepthAnythingV2 demonstrates performance comparable to established
-                        hybrid methods, including DF-VO and KP-Depth-VO,
-                        demonstrating that our approach achieves comparable accuracy to hybrid methods without the
-                        computational overhead of their multi-stage processing pipelines.
-                    </p>
+                        <div class="column">
+                            <h2 class="title is-3 has-text-left">Results</h2>
+                            <h2 class="title is-4 has-text-left">Visual Odometry Results</h2>
+                            <img src="static/images/trajectory.png" alt="VO" style="width: 80%; height: auto;">
+                            <p class="content has-text-justified">
+                                In sequence 01, the hybrid method DF-VO
+                                completely fails, while SC-Depth exhibits larger deviations compared to our
+                                method, which achieves significantly more accurate trajectories. In sequence 09,
+                                CoProU-VO
+                                with DepthAnythingV2 demonstrates performance comparable to established
+                                hybrid methods, including DF-VO and KP-Depth-VO,
+                                demonstrating that our approach achieves comparable accuracy to hybrid methods without
+                                the
+                                computational overhead of their multi-stage processing pipelines.
+                            </p>
 
 
-                    <h2 class="title is-4 has-text-left">Visual Comparisons of Learned Uncertainty</h2>
+                            <h2 class="title is-4 has-text-left">Visual Comparisons of Learned Uncertainty</h2>
 
-                    <div class="container is-max-desktop">
-                        <div class="columns is-mobile is-centered is-multiline">
-                            <!-- Visual Effects. -->
-                            <div class="column">
-                                <div class="content">
-                                    <div class="columns is-centered">
-                                        <div class="column is-full-width">
-                                            <div id="example1" class="bal-container-small">
+                            <div class="container is-max-desktop">
+                                <div class="columns is-mobile is-centered is-multiline">
+                                    <!-- Visual Effects. -->
+                                    <div class="column">
+                                        <div class="content">
+                                            <div class="columns is-centered">
+                                                <div class="column is-full-width">
+                                                    <div id="example1" class="bal-container-small">
 
-                                                <div class="bal-after">
-                                                    <img src="static/images/1/combined projected uncertainty.png">
-                                                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                                                        CoProU (Ours)
-                                                    </div>
-                                                </div>
-
-                                                <div class="bal-before" style="width:70.06369426751593%;">
-                                                    <div class="bal-before-inset" style="width: 628px;">
-                                                        <img src="static/images/1/single uncertainty.png">
-                                                        <div class="bal-beforePosition beforeLabel">
-                                                            D3VO - Single Uncertainty
+                                                        <div class="bal-after">
+                                                            <img
+                                                                src="static/images/1/combined projected uncertainty.png">
+                                                            <div class="bal-afterPosition afterLabel"
+                                                                style="z-index:1;">
+                                                                CoProU (Ours)
+                                                            </div>
                                                         </div>
+
+                                                        <div class="bal-before" style="width:70.06369426751593%;">
+                                                            <div class="bal-before-inset" style="width: 628px;">
+                                                                <img src="static/images/1/single uncertainty.png">
+                                                                <div class="bal-beforePosition beforeLabel">
+                                                                    D3VO - Single Uncertainty
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bal-handle" style="left:70.06369426751593%;">
+                                                            <span class=" handle-left-arrow"></span>
+                                                            <span class="handle-right-arrow"></span>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div id="example2" class="bal-container-small">
+
+                                                        <div class="bal-after">
+                                                            <img
+                                                                src="static/images/2/combined projected uncertainty.png">
+                                                            <div class="bal-afterPosition afterLabel"
+                                                                style="z-index:1;">
+                                                                CoProU (Ours)
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bal-before" style="width:33.9171974522293%;">
+                                                            <div class="bal-before-inset" style="width: 628px;">
+                                                                <img src="static/images/2/target%20uncertainty.png">
+                                                                <div class="bal-beforePosition beforeLabel">
+                                                                    D3VO - Single Uncertainty
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bal-handle" style="left:33.9171974522293%;">
+                                                            <span class=" handle-left-arrow"></span>
+                                                            <span class="handle-right-arrow"></span>
+                                                        </div>
+
                                                     </div>
                                                 </div>
-
-                                                <div class="bal-handle" style="left:70.06369426751593%;">
-                                                    <span class=" handle-left-arrow"></span>
-                                                    <span class="handle-right-arrow"></span>
-                                                </div>
-
                                             </div>
+                                        </div>
+                                    </div>
 
+                                    <!--/ Visual Effects. -->
 
-                                            <div id="example2" class="bal-container-small">
+                                    <!-- Matting. -->
+                                    <div class="column">
+                                        <div class="columns is-centered">
+                                            <div class="column content">
 
-                                                <div class="bal-after">
-                                                    <img src="static/images/2/combined projected uncertainty.png">
-                                                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                                                        CoProU (Ours)
-                                                    </div>
-                                                </div>
-
-                                                <div class="bal-before" style="width:33.9171974522293%;">
-                                                    <div class="bal-before-inset" style="width: 628px;">
-                                                        <img src="static/images/2/target%20uncertainty.png">
-                                                        <div class="bal-beforePosition beforeLabel">
-                                                            D3VO - Single Uncertainty
+                                                <div id="example4" class="bal-container-small">
+                                                    <div class="bal-after">
+                                                        <img src="static/images/3/combined projected uncertainty.png">
+                                                        <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                                                            CoProU (Ours)
                                                         </div>
                                                     </div>
+
+                                                    <div class="bal-before" style="width:7.165605095541402%;">
+                                                        <div class="bal-before-inset">
+                                                            <img src="static/images/3/target%20uncertainty.png">
+                                                            <div class="bal-beforePosition beforeLabel">
+                                                                D3VO - Single Uncertainty
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="bal-handle" style="left:7.165605095541402%;">
+                                                        <span class=" handle-left-arrow"></span>
+                                                        <span class="handle-right-arrow"></span>
+                                                    </div>
+
                                                 </div>
 
-                                                <div class="bal-handle" style="left:33.9171974522293%;">
-                                                    <span class=" handle-left-arrow"></span>
-                                                    <span class="handle-right-arrow"></span>
-                                                </div>
+                                                <div id="example5" class="bal-container-small">
+                                                    <div class="bal-after">
+                                                        <img src="static/images/4/combined projected uncertainty.png">
+                                                        <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                                                            CoProU (Ours)
+                                                        </div>
+                                                    </div>
 
+                                                    <div class="bal-before" style="width:46.17834394904459%;">
+                                                        <div class="bal-before-inset">
+                                                            <img src="static/images/4/target%20uncertainty.png">
+                                                            <div class="bal-beforePosition beforeLabel">
+                                                                D3VO - Single Uncertainty
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="bal-handle" style="left:46.17834394904459%;">
+                                                        <span class=" handle-left-arrow"></span>
+                                                        <span class="handle-right-arrow"></span>
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!--/ Visual Effects. -->
-
-                            <!-- Matting. -->
-                            <div class="column">
-                                <div class="columns is-centered">
-                                    <div class="column content">
-
-                                        <div id="example4" class="bal-container-small">
-                                            <div class="bal-after">
-                                                <img src="static/images/3/combined projected uncertainty.png">
-                                                <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                                                    CoProU (Ours)
-                                                </div>
-                                            </div>
-
-                                            <div class="bal-before" style="width:7.165605095541402%;">
-                                                <div class="bal-before-inset">
-                                                    <img src="static/images/3/target%20uncertainty.png">
-                                                    <div class="bal-beforePosition beforeLabel">
-                                                        D3VO - Single Uncertainty
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="bal-handle" style="left:7.165605095541402%;">
-                                                <span class=" handle-left-arrow"></span>
-                                                <span class="handle-right-arrow"></span>
-                                            </div>
-
+                            <br>
+                            <h2 class="title is-4 has-text-left">Visualizations in Sequences</h2>
+                            <h3 class="title is-4 has-text-centered">KITTI</h3>
+                            <div class="columns is-mobile is-centered is-multiline">
+                                <div class="column is-half" id="container-0" style="width: 100%;">
+                                    <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
+                                        Sequence 4
+                                    </h5>
+                                    <div>
+                                        <div class="container-video">
+                                            <video class="video-element" autoplay loop muted playsinline
+                                                onmouseover="this.controls = true" onmouseout="this.controls = false">
+                                                <source src="static/videos/seq04.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="video-label video-label-left">Depth</div>
+                                            <div class="video-label video-label-center">RGB</div>
+                                            <div class="video-label video-label-right">Target View Uncertainty</div>
                                         </div>
 
-                                        <div id="example5" class="bal-container-small">
-                                            <div class="bal-after">
-                                                <img src="static/images/4/combined projected uncertainty.png">
-                                                <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                                                    CoProU (Ours)
-                                                </div>
-                                            </div>
+                                    </div>
 
-                                            <div class="bal-before" style="width:46.17834394904459%;">
-                                                <div class="bal-before-inset">
-                                                    <img src="static/images/4/target%20uncertainty.png">
-                                                    <div class="bal-beforePosition beforeLabel">
-                                                        D3VO - Single Uncertainty
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="bal-handle" style="left:46.17834394904459%;">
-                                                <span class=" handle-left-arrow"></span>
-                                                <span class="handle-right-arrow"></span>
-                                            </div>
+                                </div>
 
+                                <div class="columns is-mobile is-centered is-multiline">
+
+                                    <div class="column is-half" id="container-1" style="width: 100%;">
+                                        <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
+                                            Sequence 5
+                                        </h5>
+                                        <div class="container-video">
+                                            <video class="video-element" autoplay loop muted playsinline
+                                                onmouseover="this.controls = true" onmouseout="this.controls = false">
+                                                <source src="static/videos/seq05.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="video-label video-label-left">Depth</div>
+                                            <div class="video-label video-label-center">RGB</div>
+                                            <div class="video-label video-label-right">Target View Uncertainty</div>
                                         </div>
+
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <br>
-                    <h2 class="title is-4 has-text-left">Visualizations in Sequences</h2>
-                    <h3 class="title is-4 has-text-centered">KITTI</h3>
-                    <div class="columns is-mobile is-centered is-multiline">
-                        <div class="column is-half" id="container-0" style="width: 100%;">
-                            <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
-                                Sequence 4
-                            </h5>
-                            <div>
-                                <div class="container-video">
-                                    <video class="video-element" autoplay loop muted playsinline
-                                           onmouseover="this.controls = true" onmouseout="this.controls = false">
-                                        <source src="static/videos/seq04.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div class="video-label video-label-left">Depth</div>
-                                    <div class="video-label video-label-center">RGB</div>
-                                    <div class="video-label video-label-right">Target View Uncertainty</div>
+                                <h3 class="title is-4 has-text-centered">NuScenes</h3>
+                                <div class="columns is-mobile is-centered is-multiline">
+                                    <div class="column is-half" id="container-2" style="width: 100%;">
+                                        <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
+                                            Scene 0685 (Front Camera)
+                                        </h5>
+
+                                        <div class="container-video">
+                                            <video class="video-element" autoplay loop muted playsinline
+                                                onmouseover="this.controls = true" onmouseout="this.controls = false">
+                                                <source src="static/videos/seqscene-0685_0.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="video-label video-label-left">Depth</div>
+                                            <div class="video-label video-label-center">RGB</div>
+                                            <div class="video-label video-label-right">Target View Uncertainty</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="columns is-mobile is-centered is-multiline">
+
+                                    <div class="column is-half" id="container-3" style="width: 100%;">
+                                        <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
+                                            Scene 0733 (Front Camera)
+                                        </h5>
+
+
+                                        <div class="container-video">
+                                            <video class="video-element" autoplay loop muted playsinline
+                                                onmouseover="this.controls = true" onmouseout="this.controls = false">
+                                                <source src="static/videos/seqscene-0733_0.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <div class="video-label video-label-left">Depth</div>
+                                            <div class="video-label video-label-center">RGB</div>
+                                            <div class="video-label video-label-right">Target View Uncertainty</div>
+                                        </div>
+
+                                    </div>
                                 </div>
 
-                            </div>
-
-
-                        </div>
-
-                        <div class="columns is-mobile is-centered is-multiline">
-
-                            <div class="column is-half" id="container-1" style="width: 100%;">
-                                <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
-                                    Sequence 5
-                                </h5>
-                                <div class="container-video">
-                                    <video class="video-element" autoplay loop muted playsinline
-                                           onmouseover="this.controls = true" onmouseout="this.controls = false">
-                                        <source src="static/videos/seq05.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div class="video-label video-label-left">Depth</div>
-                                    <div class="video-label video-label-center">RGB</div>
-                                    <div class="video-label video-label-right">Target View Uncertainty</div>
-                                </div>
 
                             </div>
                         </div>
-
-                        <h3 class="title is-4 has-text-centered">NuScenes</h3>
-                        <div class="columns is-mobile is-centered is-multiline">
-                            <div class="column is-half" id="container-2" style="width: 100%;">
-                                <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
-                                    Scene 0685 (Front Camera)
-                                </h5>
-
-                                <div class="container-video">
-                                    <video class="video-element" autoplay loop muted playsinline
-                                           onmouseover="this.controls = true" onmouseout="this.controls = false">
-                                        <source src="static/videos/seqscene-0685_0.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div class="video-label video-label-left">Depth</div>
-                                    <div class="video-label video-label-center">RGB</div>
-                                    <div class="video-label video-label-right">Target View Uncertainty</div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="columns is-mobile is-centered is-multiline">
-
-                            <div class="column is-half" id="container-3" style="width: 100%;">
-                                <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
-                                    Scene 0733 (Front Camera)
-                                </h5>
-
-
-                                <div class="container-video">
-                                    <video class="video-element" autoplay loop muted playsinline
-                                           onmouseover="this.controls = true" onmouseout="this.controls = false">
-                                        <source src="static/videos/seqscene-0733_0.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div class="video-label video-label-left">Depth</div>
-                                    <div class="video-label video-label-center">RGB</div>
-                                    <div class="video-label video-label-right">Target View Uncertainty</div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<section class="section" id="bibtex">
-    <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <pre><code id="bibtex_txt">@inproceedings{xie2025coprou,
+        <section class="section" id="bibtex">
+            <div class="container is-max-desktop content">
+                <h2 class="title">BibTeX</h2>
+                <pre><code id="bibtex_txt">@inproceedings{xie2025coprou,
   title        = {CoProU-VO: Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry},
   author       = {Xie, Jingchao and Dhaouadi, Oussema and Chen, Weirong and Meier, Johannes and Kaiser, Jacques and Cremers, Daniel},
   booktitle    = {DAGM German Conference on Pattern Recognition},
   year         = {2025}
 }</code></pre>
+            </div>
+        </section>
+
+        <script type="text/javascript">
+            document.getElementById("bibtex_txt").onclick = function () {
+                var range = document.createRange();
+                range.selectNode(document.getElementById("bibtex_txt"));
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+            };
+        </script>
+
     </div>
-</section>
 
-<script
-        type="text/javascript">
-    document.getElementById("bibtex_txt").onclick = function () {
-        var range = document.createRange();
-        range.selectNode(document.getElementById("bibtex_txt"));
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(range);
-    };
-</script>
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
 
-</div>
-
-<footer class="footer">
-    <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-8">
-                <div class="content">
-
-                    <p>
-                        This page was built using the <a
-                            href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                            target="_blank">Academic Project Page Template</a> which was adopted from the <a
-                            href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-                    </p>
+                        <p>
+                            This page was built using the <a
+                                href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 
-<script src="static/js/script.js"></script>
+    <script src="static/js/script.js"></script>
 
-<script>
-    new BeforeAfter({
-        id: '#example1'
-    });
-    new BeforeAfter({
-        id: '#example2'
-    });
-    new BeforeAfter({
-        id: '#example4'
-    });
-    new BeforeAfter({
-        id: '#example5'
-    });
-
-</script>
-
-
-
-<script>
-function showVersion(version) {
-    if (version === 'ijcv') {
-        document.getElementById('tab-ijcv').classList.add('is-active');
-        document.getElementById('tab-gcpr').classList.remove('is-active');
-        document.getElementById('content-ijcv').style.display = 'block';
-        document.getElementById('content-gcpr').style.display = 'none';
-    } else {
-        document.getElementById('tab-gcpr').classList.add('is-active');
-        document.getElementById('tab-ijcv').classList.remove('is-active');
-        document.getElementById('content-gcpr').style.display = 'block';
-        document.getElementById('content-ijcv').style.display = 'none';
-    }
-}
-</script>
-
-<script>
-function sortTable(tableId, colIndex, isNumeric) {
-    var table = document.getElementById(tableId);
-    var tbody = table.tBodies[0];
-    var rows = Array.from(tbody.rows);
-    var asc = table.getAttribute("data-sort-dir") === "asc";
-    table.setAttribute("data-sort-dir", asc ? "desc" : "asc");
-    
-    rows.sort(function(a, b) {
-        var aText = a.cells[colIndex].innerText.trim();
-        var bText = b.cells[colIndex].innerText.trim();
-        
-        // Handle bold and underline correctly by extracting text
-        if(isNumeric) {
-            var aVal = parseFloat(aText) || 0;
-            var bVal = parseFloat(bText) || 0;
-            return asc ? aVal - bVal : bVal - aVal;
-        } else {
-            return asc ? aText.localeCompare(bText) : bText.localeCompare(aText);
-        }
-    });
-    
-    rows.forEach(function(row) {
-        tbody.appendChild(row);
-    });
-}
-
-// Attach listeners to table headers
-document.addEventListener('DOMContentLoaded', function() {
-    var table = document.getElementById("resultsTable");
-    if(table) {
-        var headers = table.querySelectorAll('thead tr:last-child th');
-        // The first two columns span both rows, we will just handle the data columns for simplicity
-        // Actually, let's attach to all bottom-level headers
-        headers.forEach((th, index) => {
-            th.style.cursor = 'pointer';
-            th.onclick = function() {
-                // Determine actual column index
-                var actualCol = index + 2; // offset for Method and Trainable which are on first tr
-                sortTable("resultsTable", actualCol, true);
-            };
+    <script>
+        new BeforeAfter({
+            id: '#example1'
         });
-        var topHeaders = table.querySelectorAll('thead tr:first-child th');
-        topHeaders[0].style.cursor = 'pointer';
-        topHeaders[0].onclick = function() { sortTable("resultsTable", 0, false); };
-        topHeaders[1].style.cursor = 'pointer';
-        topHeaders[1].onclick = function() { sortTable("resultsTable", 1, false); };
-    }
-});
-</script>
+        new BeforeAfter({
+            id: '#example2'
+        });
+        new BeforeAfter({
+            id: '#example4'
+        });
+        new BeforeAfter({
+            id: '#example5'
+        });
+
+    </script>
+
+
+
+    <script>
+        function showVersion(version) {
+            if (version === 'ijcv') {
+                document.getElementById('tab-ijcv').classList.add('is-active');
+                document.getElementById('tab-gcpr').classList.remove('is-active');
+                document.getElementById('content-ijcv').style.display = 'block';
+                document.getElementById('content-gcpr').style.display = 'none';
+                if (window.location.hash !== '#ijcv') window.history.replaceState(null, null, '#ijcv');
+            } else {
+                document.getElementById('tab-gcpr').classList.add('is-active');
+                document.getElementById('tab-ijcv').classList.remove('is-active');
+                document.getElementById('content-gcpr').style.display = 'block';
+                document.getElementById('content-ijcv').style.display = 'none';
+                if (window.location.hash !== '#gcpr') window.history.replaceState(null, null, '#gcpr');
+            }
+        }
+    </script>
+
+    <script>
+        function sortTable(tableId, colIndex, isNumeric) {
+            var table = document.getElementById(tableId);
+            var tbody = table.tBodies[0];
+            var rows = Array.from(tbody.rows);
+            var asc = table.getAttribute("data-sort-dir") === "asc";
+            table.setAttribute("data-sort-dir", asc ? "desc" : "asc");
+
+            rows.sort(function (a, b) {
+                var aText = a.cells[colIndex].innerText.trim();
+                var bText = b.cells[colIndex].innerText.trim();
+
+                // Handle bold and underline correctly by extracting text
+                if (isNumeric) {
+                    var aVal = parseFloat(aText) || 0;
+                    var bVal = parseFloat(bText) || 0;
+                    return asc ? aVal - bVal : bVal - aVal;
+                } else {
+                    return asc ? aText.localeCompare(bText) : bText.localeCompare(aText);
+                }
+            });
+
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+
+        // Attach listeners to table headers
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initial load from hash
+            if (window.location.hash) {
+                var hash = window.location.hash.substring(1);
+                if (hash === 'ijcv' || hash === 'gcpr') {
+                    showVersion(hash);
+                }
+            } else {
+                showVersion('ijcv');
+            }
+
+            var table = document.getElementById("resultsTable");
+            if (table) {
+                var headers = table.querySelectorAll('thead tr:last-child th');
+                // The first two columns span both rows, we will just handle the data columns for simplicity
+                // Actually, let's attach to all bottom-level headers
+                headers.forEach((th, index) => {
+                    th.style.cursor = 'pointer';
+                    th.onclick = function () {
+                        // Determine actual column index
+                        var actualCol = index + 2; // offset for Method and Trainable which are on first tr
+                        sortTable("resultsTable", actualCol, true);
+                    };
+                });
+                var topHeaders = table.querySelectorAll('thead tr:first-child th');
+                topHeaders[0].style.cursor = 'pointer';
+                topHeaders[0].onclick = function () { sortTable("resultsTable", 0, false); };
+                topHeaders[1].style.cursor = 'pointer';
+                topHeaders[1].onclick = function () { sortTable("resultsTable", 1, false); };
+            }
+        });
+    </script>
 </body>
 
 
