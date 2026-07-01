@@ -1,7 +1,29 @@
 <div align="center">
 
-# CoProU-VO: Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry
+# 🌟 CoProU-VO: Combined Projected Uncertainty for Visual Odometry
 
+<br/>
+
+> **Welcome!** This repository hosts the official implementations of our work on self-supervised visual odometry. We provide two versions corresponding to our publications:
+
+<table align="center" style="margin: 0px auto;">
+  <tr>
+    <td align="center" width="50%">
+      <b>📄 IJCV 2026 (Extended Multi-Frame)</b><br>
+      <i>Combining Projected Uncertainty for Self-Supervised Visual Odometry: From Two-Frame to Multi-Frame</i><br><br>
+      Switch to the <code>main</code> branch for this version.<br>
+      <a href="https://github.com/Jchao-Xie/CoProU/tree/main"><code>[Switch to main Branch]</code></a>
+    </td>
+    <td align="center" width="50%">
+      <b>📄 GCPR 2025 (Original Two-Frame)</b><br>
+      <i>CoProU-VO: Combining Projected Uncertainty for End-to-End Unsupervised Monocular Visual Odometry</i><br><br>
+      👉 <b>You are currently viewing this version.</b><br>
+      <a href="https://github.com/Jchao-Xie/CoProU/tree/gcpr-2025"><code>[View gcpr-2025 Branch]</code></a>
+    </td>
+  </tr>
+</table>
+
+<br/>
 ### **[Jingchao Xie](https://www.linkedin.com/in/jingchao-xie-16b724297)\***<sup>1,3</sup>, **[Oussema Dhaouadi](https://cvg.cit.tum.de/members/dhou)\***<sup>1,2,3</sup>†, **[Weirong Chen](https://wrchen530.github.io/)**<sup>1,3</sup>, **[Johannes Meier](https://cvg.cit.tum.de/members/mejo)**<sup>1,2,3</sup>, 
 ### **[Jacques Kaiser](https://jacqueskaiser.com/)**<sup>2</sup>, **[Daniel Cremers](https://cvg.cit.tum.de/members/cremers)**<sup>1,3</sup>
 
