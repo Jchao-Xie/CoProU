@@ -261,7 +261,7 @@ We appreciate the contributions of the following projects, which have greatly su
 This project is licensed under the GNU General Public License v3.0.  
 See the [LICENSE](./LICENSE) file for more details.
 
-Parts of this repository are adapted from VGGT and are subject to the VGGT License. A copy of the VGGT License is provided in [VGGT_LICENSE](./third_party/VGGT_LICENSE.txt).
+Parts of this repository are adapted from VGGT and are subject to the [VGGT LICENSE](https://github.com/facebookresearch/vggt/blob/main/LICENSE.txt).
 
 Third-party components retain their original licenses. Please check the corresponding license files and source repositories for details.
 
